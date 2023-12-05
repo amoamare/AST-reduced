@@ -1,0 +1,274 @@
+#ifndef RILMAINCLASS_H
+#define RILMAINCLASS_H
+
+#pragma region include Models and Ril Classes
+#include <utils.cpp>
+#include "models/AuthModel.cpp"
+#include "models/SoftwareConfigModel.cpp"
+#include "models/UnlockModel.cpp"
+#include "Structs.cpp"
+#include "Encryption.cpp"
+#include "IRilConnection.cpp"
+#include "RilConnectionDirect.cpp"
+#include "RilConnectionJvm.cpp"
+#include "scripts/IScript.cpp"
+
+#pragma endregion 
+
+
+#pragma region include Scripts
+#include "scripts/SamsungTmbQcomUploadScript.cpp"
+#include "scripts/ReadInfoScript.cpp"
+#include "scripts/ReadSamsungSpcScript.cpp"
+#pragma endregion 
+
+using namespace std;
+
+namespace Amosoft
+{
+	class RilMainClass
+	{
+		private:
+			atomic<bool> _forceJvm = false;
+			RilConnectionDirect *rilDirect;
+			RilConnectionJvm	*rilJvm;
+			const AuthModel& authModel;
+			Encryption encryption;
+			string imei;
+
+			typedef enum
+			{
+				Success = 0,
+				ImeiSign = 1,
+				Msl = 2,
+				MslId = 3,
+				KeyId = 4,
+				CpId = 5,
+				LockType = 6
+			} SignStep;
+
+			inline static const string StrFail = "FAIL";
+			inline static const string StrOk = "OK";
+
+
+			void PrintInput()
+			{
+				cout << "input:" << endl;
+			}
+
+			void Print(const string str)
+			{
+				encryption.EncryptAndPrint(str);
+			}
+
+			IRilConnection *GetRilConnection(bool forceJvm = false)
+			{
+				if (_forceJvm || forceJvm) return reinterpret_cast<IRilConnection *>(rilJvm);
+				return rilDirect->Initialized() ? reinterpret_cast<IRilConnection *>(rilDirect) : reinterpret_cast<IRilConnection *>(rilJvm);
+			}
+
+			bool SendAtComamnd(const string command)
+			{
+				return GetRilConnection()->SendAtComamnd(command);
+			}
+
+			bool RunAtCommand(const string command, string& message)
+			{
+				return GetRilConnection()->RunAtCommand(command, message);
+			}
+
+			bool IsRadioOn(bool reconnect = false)
+			{
+				return GetRilConnection()->IsRadioOn(reconnect);
+			}
+
+			bool InvokeCommand(char* command, int size, bool clearLogBefore = true, bool clearLogAfter = true, bool read = true)
+			{
+				return GetRilConnection()->InvokeCommand(command, size, clearLogBefore, clearLogAfter, read);
+			}
+
+			bool InvokeCommand(string command, bool clearLogBefore = true, bool clearLogAfter = true, bool read = true)
+			{
+				return InvokeCommand((char*)command.c_str(), command.length(), clearLogBefore, clearLogAfter, read);
+			}
+
+			bool CpCrash()
+			{
+				return GetRilConnection()->CpCrash();
+			}
+
+			bool CpCrashByAt()
+			{
+				return GetRilConnection()->CpCrashByAt();
+			}
+
+			int GetSprintUnlockState()
+			{
+				return GetRilConnection()->GetSprintUnlockState();
+			}
+
+			bool SetSprintUnlockState(int state)
+			{
+				return GetRilConnection()->SetSprintUnlockState(state);
+			}
+
+			bool QcWipe()
+			{
+				return GetRilConnection()->QcWipe();
+			}
+
+			bool QcReset()
+			{
+				return GetRilConnection()->QcReset();
+			}
+
+			bool SprRtn()
+			{
+				return GetRilConnection()->SprRtn();
+			}
+
+			bool ExynosDump(string blobData, string& response)
+			{
+				return GetRilConnection()->ExynosDump(blobData, response);
+			}
+
+			bool SetCsc(const string salesCode, const string salesCountry = string())
+			{
+				return GetRilConnection()->SetCsc(salesCode, salesCountry);
+			}
+
+			bool Initialize()
+			{
+				const string operation("Initialized:");
+				cout << "[*] Initializing" << endl;
+				rilJvm = new RilConnectionJvm(authModel);
+				bool jvmInitialized = rilJvm->Initialized();
+				_forceJvm = authModel.ForceJvm;
+/* if we force JVM we still want to see if we can register to call backs. This way we do not need CP or Debug HIGH */
+
+				rilDirect = new RilConnectionDirect(authModel);
+				bool directInitialized = rilDirect->Initialized();
+//cout << "Type: " << directInitialized << endl;
+				if (!directInitialized && !jvmInitialized)
+				{
+					cout << operation << StrFail << endl;
+					return false;
+				}
+				if (directInitialized && !jvmInitialized)
+				{
+					cout << operation << StrFail << endl;
+					return false;
+				}
+				if (!jvmInitialized)
+				{
+					cout << operation << StrFail << endl;
+					return false;
+				}
+
+				cout << operation << StrOk << endl;
+				return true;
+			}
+			/// <summary>
+			/// Read IMEI & Device Information
+			/// </summary>
+			bool ReadDeviceData()
+			{
+				const string operation("Reading Information");
+				cout << "[*] " << operation << endl;
+				string model = UtilsClass::GetModel();
+				string androidVersion = UtilsClass::GetVersionRelease();
+				string hardware = UtilsClass::GetHardware();
+				//int hardwareType = UtilsClass::GetHardwareType();
+				int apiLevel = UtilsClass::GetSystemApiLevel();
+				string salesCode = UtilsClass::GetSalesCode();
+				cout << operation << ':' << StrOk << endl;
+				if (UtilsClass::GetSystemApiLevel() > 21)
+				{
+					imei = GetRilConnection(true)->Imei;
+					if (imei.empty()) imei.append("00000000000000");
+					cout << "IMEI: " << imei << endl;
+				}
+				cout << "Model: " << model << endl
+				<< "Android Version: " << androidVersion << endl
+				<< "Hardware: " << hardware << endl
+				<< "API Level: " << apiLevel << endl
+				<< "Carrier: " << salesCode << endl;
+				return true;
+			}
+
+
+			void OperationSprByMslCert()
+			{
+				if (CheckIfUsbHighIsNeeded())
+				{
+					return;
+				}
+			}
+
+			bool CheckIfUsbHighIsNeeded()
+			{
+				Print("[*] IsUsbHighRequired");
+				// sainty check, if USB & CP are set to high skip this check.
+				if (UtilsClass::IsDebugHigh())
+				{
+					Print("IsUsbHighRequired:FALSE");
+					return false;
+				} //already set to high so dont have to set again.
+				bool canRead = ReadImeiTest();
+				if (canRead)
+				{
+					Print("IsUsbHighRequired:FALSE");
+					return false;
+				} //already set to high so dont have to set again.
+				else
+				{
+					Print("IsUsbHighRequired:TRUE");
+					return true; // require that USB set to high
+				}
+			}
+
+			bool ReadImeiTest()
+			{
+				bool flag = true;
+				int retry = 5;
+				string message;
+				do
+				{
+					message.clear();
+					flag = RunAtCommand("AT+IMEITEST=1,0", message);
+					if (flag) break;
+					retry--;
+					message.insert(0, "FAIL");
+					this_thread::sleep_for(chrono::seconds(2));
+				}while(retry != 0);
+				if (message.find("IMEITEST:1,") != string::npos)
+				{
+					return true;
+				}
+				return false;
+			}
+
+			void OperationAtUnprotected()
+			{
+				bool flag = true;
+				do
+				{
+					cout << "#";
+					string input;
+					getline (cin, input);
+					if (input.compare("exit") ==0)
+					{
+						break;
+					}
+					string message;
+					flag = CheckAndExecuteCommand(input, message);
+					if (!flag)
+					{
+						message.insert(0, "FAIL (");
+						message.append(")");
+						cout << message << endl;
+						continue;
+					}
+					cout << message << endl;
+				}while(flag);
+			}
