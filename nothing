@@ -1,0 +1,3371 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Runtime.CompilerServices;
+using System.Text;
+
+// Token: 0x020000BC RID: 188
+public class GClass65
+{
+	// Token: 0x0600063D RID: 1597 RVA: 0x00028364 File Offset: 0x00026564
+	public GClass65(string string_6)
+	{
+		this.list_0 = new List<GClass65.GClass88>();
+		GClass65.binaryReader_0 = new BinaryReader(new MemoryStream(File.ReadAllBytes(string_6)));
+		GClass65.binaryReader_0.BaseStream.Position = 0L;
+		this.method_0();
+		this.method_1();
+	}
+
+	// Token: 0x0600063E RID: 1598 RVA: 0x000283DC File Offset: 0x000265DC
+	private void method_0()
+	{
+		if (GClass65.smethod_2() != "O95w-28ps49m 02v9o.")
+		{
+			throw new Exception();
+		}
+		int num = 0;
+		if (!GClass65.smethod_4(1, ref num))
+		{
+			throw new Exception();
+		}
+		this.string_0 = GClass65.smethod_3(GClass65.smethod_2());
+		this.string_1 = GClass65.smethod_3(GClass65.smethod_2());
+		string.IsNullOrEmpty(this.string_1);
+		this.string_2 = GClass65.smethod_3(GClass65.smethod_2());
+		this.string_3 = GClass65.smethod_3(GClass65.smethod_2());
+		this.string_4 = GClass65.smethod_3(GClass65.smethod_2());
+		this.string_5 = GClass65.smethod_3(GClass65.smethod_2());
+	}
+
+	// Token: 0x0600063F RID: 1599 RVA: 0x00028480 File Offset: 0x00026680
+	private void method_1()
+	{
+		int num = 0;
+		int num2 = 0;
+		if (!GClass65.smethod_4(22, ref num))
+		{
+			throw new Exception();
+		}
+		if (GClass65.smethod_4(2, ref num2))
+		{
+			this.method_2();
+			int i = GClass65.smethod_1();
+			if (num2 > 0)
+			{
+				i = GClass65.smethod_1();
+				if (i > 100000)
+				{
+					throw new Exception();
+				}
+				while (i > 0)
+				{
+					this.list_1.Add(GClass65.smethod_2().ToUpper());
+					i--;
+				}
+			}
+			if (num2 > 1)
+			{
+				GClass65.binaryReader_0.ReadInt32();
+				GClass65.binaryReader_0.ReadInt32();
+			}
+			if (num < 10)
+			{
+				this.method_10();
+			}
+			this.method_3();
+			this.method_4();
+			this.method_4();
+			if (num > 0)
+			{
+				new Rectangle(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				GClass65.binaryReader_0.ReadInt32();
+				GClass65.binaryReader_0.ReadInt32();
+				GClass65.binaryReader_0.ReadByte();
+				GClass65.binaryReader_0.ReadByte();
+				GClass65.binaryReader_0.ReadInt32();
+				if (num > 13)
+				{
+					GClass65.binaryReader_0.ReadInt32();
+					if (num > 15)
+					{
+						GClass65.binaryReader_0.ReadInt32();
+					}
+					GClass65.binaryReader_0.ReadInt32();
+					GClass65.binaryReader_0.ReadInt32();
+				}
+				GClass65.binaryReader_0.ReadByte();
+				GClass65.binaryReader_0.ReadByte();
+				if (num > 21)
+				{
+					GClass65.binaryReader_0.ReadByte();
+					GClass65.binaryReader_0.ReadByte();
+				}
+				if (num > 1)
+				{
+					GClass65.binaryReader_0.ReadInt32();
+				}
+				if (num < 11)
+				{
+					if (num > 4)
+					{
+						GClass65.binaryReader_0.BaseStream.Position += 4L;
+					}
+					if (num > 7)
+					{
+						GClass65.binaryReader_0.BaseStream.Position += 1L;
+					}
+				}
+				else
+				{
+					GClass65.binaryReader_0.ReadInt32();
+				}
+				if (num > 16)
+				{
+					GClass65.binaryReader_0.ReadByte();
+				}
+				if (num > 17)
+				{
+					GClass65.binaryReader_0.ReadByte();
+				}
+			}
+			if (num > 2 && num < 7)
+			{
+				GClass65.binaryReader_0.BaseStream.Position += 4L;
+			}
+			if (num > 3)
+			{
+				this.method_14();
+				this.method_14();
+			}
+			if (num > 5)
+			{
+				this.method_5();
+			}
+			if (num > 8)
+			{
+				this.method_6();
+			}
+			return;
+		}
+		throw new Exception();
+	}
+
+	// Token: 0x06000640 RID: 1600 RVA: 0x000286DC File Offset: 0x000268DC
+	private void method_2()
+	{
+		int num = 0;
+		if (GClass65.smethod_4(2, ref num) && num != 0)
+		{
+			int num2 = GClass65.binaryReader_0.ReadInt32();
+			for (int i = 0; i < num2; i++)
+			{
+				int num3 = GClass65.binaryReader_0.ReadInt32();
+				GClass65.GClass88 gclass = null;
+				switch (num3)
+				{
+				case 0:
+					gclass = new GClass65.GClass89();
+					break;
+				case 1:
+					gclass = new GClass65.GClass90();
+					break;
+				case 2:
+					gclass = new GClass65.GClass91();
+					break;
+				case 3:
+					gclass = new GClass65.GClass92();
+					break;
+				case 4:
+					gclass = new GClass65.GClass93();
+					break;
+				}
+				gclass.vmethod_0();
+				this.list_0.Add(gclass);
+			}
+			for (int j = GClass65.binaryReader_0.ReadInt32(); j > 0; j--)
+			{
+				if (num >= 2)
+				{
+					this.method_12();
+				}
+				else
+				{
+					this.method_11();
+				}
+			}
+			GClass65.binaryReader_0.ReadInt32();
+			if (num > 0)
+			{
+				this.method_13();
+			}
+			return;
+		}
+		throw new Exception();
+	}
+
+	// Token: 0x06000641 RID: 1601 RVA: 0x000287C0 File Offset: 0x000269C0
+	private void method_3()
+	{
+		int num = 0;
+		if (!GClass65.smethod_4(4, ref num))
+		{
+			throw new Exception();
+		}
+		GClass65.smethod_2();
+		if (num > 0)
+		{
+			GClass65.binaryReader_0.ReadInt32();
+		}
+		if (GClass65.binaryReader_0.ReadInt32() == 4)
+		{
+			int i = 0;
+			int j = 0;
+			while (j < 4)
+			{
+				i = GClass65.binaryReader_0.ReadInt32();
+				if (i >= 0)
+				{
+					if (i <= 1000)
+					{
+						while (i > 0)
+						{
+							if (GClass65.binaryReader_0.ReadByte() != 0)
+							{
+								GClass65.Class49 class49_ = new GClass65.Class49();
+								this.method_8(class49_, j);
+								i--;
+							}
+						}
+						j++;
+						continue;
+					}
+				}
+				throw new Exception();
+			}
+			if (num > 1)
+			{
+				i = GClass65.binaryReader_0.ReadInt32();
+				if (i < 0 || i > 1000)
+				{
+					throw new Exception();
+				}
+				while (i > 0)
+				{
+					GClass65.smethod_2();
+					i--;
+				}
+			}
+			if (num > 2)
+			{
+				i = GClass65.binaryReader_0.ReadInt32();
+			}
+			if (num > 3)
+			{
+				for (int k = 0; k < 8; k++)
+				{
+					GClass65.smethod_2();
+					i--;
+				}
+			}
+			return;
+		}
+		throw new Exception();
+	}
+
+	// Token: 0x06000642 RID: 1602 RVA: 0x000288BC File Offset: 0x00026ABC
+	private void method_4()
+	{
+		int num = 0;
+		if (!GClass65.smethod_4(3, ref num))
+		{
+			throw new Exception();
+		}
+		GClass65.smethod_2();
+		if (num > 1)
+		{
+			GClass65.binaryReader_0.ReadInt32();
+		}
+		for (int i = GClass65.binaryReader_0.ReadInt32(); i > 0; i--)
+		{
+			GClass65.smethod_2();
+			GClass65.smethod_2();
+			if (GClass65.binaryReader_0.ReadByte() != 0)
+			{
+				if (num != 0)
+				{
+					GClass65.smethod_2();
+				}
+				new GClass65.GClass90().vmethod_0();
+			}
+		}
+		if (num > 2)
+		{
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+		}
+	}
+
+	// Token: 0x06000643 RID: 1603 RVA: 0x0002894C File Offset: 0x00026B4C
+	private void method_5()
+	{
+		if (!GClass65.smethod_5(0))
+		{
+			return;
+		}
+		int i = GClass65.binaryReader_0.ReadInt32();
+		if (i == 0)
+		{
+			return;
+		}
+		int num = GClass65.binaryReader_0.ReadInt32();
+		if (num > GClass65.GClass80.int_7)
+		{
+			throw new Exception();
+		}
+		this.list_2 = new List<GClass65.GClass80>();
+		while (i > 0)
+		{
+			GClass65.GClass80 gclass = new GClass65.GClass80();
+			gclass.method_0(num);
+			this.list_2.Add(gclass);
+			i--;
+		}
+	}
+
+	// Token: 0x06000644 RID: 1604 RVA: 0x000289B8 File Offset: 0x00026BB8
+	private void method_6()
+	{
+		int num = 0;
+		GClass65.smethod_4(3, ref num);
+		int i = GClass65.binaryReader_0.ReadInt32();
+		if (i <= 0)
+		{
+			return;
+		}
+		while (i > 0)
+		{
+			if (num <= 1 || GClass65.binaryReader_0.ReadBoolean())
+			{
+				GClass65.GClass79 gclass = new GClass65.GClass79();
+				gclass.String_0 = GClass65.smethod_2().Trim().ToUpper();
+				if (num == 0)
+				{
+					gclass.Int32_0 = 0;
+				}
+				else
+				{
+					gclass.Int32_0 = GClass65.binaryReader_0.ReadInt32();
+				}
+				if (num <= 2)
+				{
+					gclass.Point_0 = Point.Empty;
+					gclass.Object_0 = null;
+				}
+				else
+				{
+					gclass.Point_0 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				}
+				gclass.method_0();
+				if (GClass65.binaryReader_0.ReadBoolean())
+				{
+					int num2 = GClass65.binaryReader_0.ReadInt32();
+					if (GClass65.GClass86.Int32_0 < num2)
+					{
+						throw new Exception();
+					}
+					gclass.gclass86_0 = new GClass65.GClass86();
+					gclass.gclass86_0.method_0(num2);
+				}
+				this.dictionary_0.Add(gclass.String_0, gclass);
+				i--;
+			}
+		}
+	}
+
+	// Token: 0x06000645 RID: 1605 RVA: 0x00028AC8 File Offset: 0x00026CC8
+	private void method_7(GClass65.GClass77 gclass77_2)
+	{
+		int i = GClass65.binaryReader_0.ReadInt32();
+		if (i != 0)
+		{
+			if (gclass77_2 == null)
+			{
+				gclass77_2 = new GClass65.GClass77();
+			}
+			else if (i > gclass77_2.int_2)
+			{
+			}
+			while (i > 0)
+			{
+				gclass77_2.int_0 = GClass65.binaryReader_0.ReadInt32();
+				i--;
+			}
+			return;
+		}
+	}
+
+	// Token: 0x06000646 RID: 1606 RVA: 0x00028B14 File Offset: 0x00026D14
+	private void method_8(GClass65.Class49 class49_0, int int_0)
+	{
+		int num = 0;
+		if (!GClass65.smethod_4(15, ref num))
+		{
+			throw new Exception();
+		}
+		class49_0.string_0 = GClass65.smethod_2();
+		class49_0.int_0 = GClass65.binaryReader_0.ReadInt32();
+		class49_0.int_1 = ((num > 13) ? GClass65.binaryReader_0.ReadInt32() : class49_0.int_0);
+		class49_0.int_2 = GClass65.binaryReader_0.ReadInt32();
+		class49_0.int_3 = GClass65.binaryReader_0.ReadInt32();
+		class49_0.int_4 = GClass65.binaryReader_0.ReadInt32();
+		class49_0.int_5 = ((num > 3) ? GClass65.binaryReader_0.ReadInt32() : class49_0.int_4);
+		class49_0.int_6 = GClass65.binaryReader_0.ReadInt32();
+		class49_0.int_7 = GClass65.smethod_1();
+		class49_0.int_9 = GClass65.smethod_1();
+		class49_0.int_10 = GClass65.binaryReader_0.ReadInt32();
+		class49_0.int_11 = GClass65.binaryReader_0.ReadInt32();
+		if (num <= 14)
+		{
+			if (int_0 != 1)
+			{
+				if (int_0 != 2)
+				{
+					class49_0.int_29 = 0;
+					class49_0.int_30 = 0;
+					goto IL_148;
+				}
+			}
+			class49_0.int_29 = class49_0.int_10;
+			class49_0.int_30 = class49_0.int_11;
+			class49_0.int_10 = 0;
+			class49_0.int_11 = 100000;
+		}
+		else
+		{
+			class49_0.int_29 = GClass65.binaryReader_0.ReadInt32();
+			class49_0.int_30 = GClass65.binaryReader_0.ReadInt32();
+		}
+		IL_148:
+		class49_0.int_12 = GClass65.smethod_1();
+		class49_0.int_23 = ((num > 0) ? GClass65.binaryReader_0.ReadInt32() : (class49_0.int_23 = class49_0.int_0));
+		if (num > 1 && GClass65.smethod_0() != 0)
+		{
+			class49_0.rectangle_0 = default(Rectangle);
+			new GClass65.GClass90().vmethod_0();
+			if (num <= 11)
+			{
+				if (num > 8)
+				{
+					GClass65.binaryReader_0.ReadInt32();
+					GClass65.binaryReader_0.ReadInt32();
+				}
+				else
+				{
+					class49_0.rectangle_0 = Rectangle.Empty;
+				}
+			}
+			else
+			{
+				class49_0.rectangle_0 = new Rectangle(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+			}
+			if (num > 10)
+			{
+				for (int i = GClass65.binaryReader_0.ReadInt32(); i > 0; i--)
+				{
+					GClass65.binaryReader_0.ReadInt32();
+					List<int> list_ = new List<int>();
+					this.method_9(list_, num);
+					list_ = new List<int>();
+					this.method_9(list_, num);
+				}
+			}
+		}
+		else
+		{
+			class49_0.rectangle_0 = Rectangle.Empty;
+		}
+		class49_0.int_24 = ((num > 2) ? GClass65.binaryReader_0.ReadInt32() : 1);
+		class49_0.int_25 = (int)((num > 4) ? GClass65.binaryReader_0.ReadByte() : 1);
+		if (num > 6)
+		{
+			class49_0.Byte_0 = GClass65.binaryReader_0.ReadByte();
+			class49_0.Byte_1 = GClass65.binaryReader_0.ReadByte();
+		}
+		else
+		{
+			class49_0.Byte_0 = 0;
+			class49_0.Byte_1 = 0;
+		}
+		class49_0.Byte_2 = ((num > 7) ? GClass65.binaryReader_0.ReadByte() : 0);
+		if (num > 9)
+		{
+			class49_0.int_26 = GClass65.binaryReader_0.ReadInt32();
+			class49_0.int_27 = GClass65.binaryReader_0.ReadInt32();
+		}
+		else
+		{
+			class49_0.int_26 = -1;
+			class49_0.int_27 = 0;
+		}
+		class49_0.int_28 = ((num > 12) ? GClass65.binaryReader_0.ReadInt32() : 0);
+		List<int> list_2 = new List<int>();
+		this.method_9(list_2, num);
+		list_2 = new List<int>();
+		this.method_9(list_2, num);
+	}
+
+	// Token: 0x06000647 RID: 1607 RVA: 0x00028E58 File Offset: 0x00027058
+	private void method_9(List<int> list_3, int int_0)
+	{
+		for (int i = GClass65.binaryReader_0.ReadInt32(); i > 0; i--)
+		{
+			if (int_0 <= 5)
+			{
+				list_3.Add(0);
+			}
+			else
+			{
+				list_3.Add(GClass65.binaryReader_0.ReadInt32());
+			}
+			list_3.Add(GClass65.binaryReader_0.ReadInt32());
+		}
+	}
+
+	// Token: 0x06000648 RID: 1608 RVA: 0x00006281 File Offset: 0x00004481
+	private void method_10()
+	{
+		throw new NotImplementedException();
+	}
+
+	// Token: 0x06000649 RID: 1609 RVA: 0x00028EA8 File Offset: 0x000270A8
+	private void method_11()
+	{
+		GClass65.binaryReader_0.ReadInt32();
+		GClass65.binaryReader_0.ReadBytes(8);
+		GClass65.binaryReader_0.ReadInt32();
+		GClass65.binaryReader_0.ReadBytes(8);
+		if (GClass65.binaryReader_0.ReadInt32() <= 1)
+		{
+			return;
+		}
+		if (GClass65.binaryReader_0.ReadInt32() > 0)
+		{
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadBytes(8);
+			return;
+		}
+	}
+
+	// Token: 0x0600064A RID: 1610 RVA: 0x00028F24 File Offset: 0x00027124
+	private void method_12()
+	{
+		int num = 0;
+		if (!GClass65.smethod_4(1, ref num))
+		{
+			throw new Exception();
+		}
+		int num2 = 0;
+		if (!GClass65.smethod_4(1, ref num2))
+		{
+			throw new Exception();
+		}
+		GClass65.smethod_1();
+		GClass65.binaryReader_0.ReadBytes(8);
+		GClass65.smethod_1();
+		GClass65.smethod_1();
+		GClass65.smethod_1();
+		GClass65.binaryReader_0.ReadInt32();
+		GClass65.binaryReader_0.ReadInt32();
+		GClass65.binaryReader_0.ReadInt32();
+	}
+
+	// Token: 0x0600064B RID: 1611 RVA: 0x00028F9C File Offset: 0x0002719C
+	private void method_13()
+	{
+		int num = 0;
+		if (!GClass65.smethod_4(0, ref num))
+		{
+			throw new Exception();
+		}
+		int num2 = GClass65.binaryReader_0.ReadInt32();
+		if (num2 <= 0)
+		{
+			return;
+		}
+		for (int i = 0; i < num2; i++)
+		{
+			new GClass65.GClass81().method_0();
+			int num3 = GClass65.binaryReader_0.ReadInt32();
+			for (int j = 0; j < num3; j++)
+			{
+				GClass65.binaryReader_0.ReadInt32();
+			}
+		}
+	}
+
+	// Token: 0x0600064C RID: 1612 RVA: 0x00029008 File Offset: 0x00027208
+	private byte[] method_14()
+	{
+		int count = (int)GClass65.binaryReader_0.ReadInt16();
+		return GClass65.binaryReader_0.ReadBytes(count);
+	}
+
+	// Token: 0x0600064D RID: 1613 RVA: 0x00006281 File Offset: 0x00004481
+	private void method_15()
+	{
+		throw new NotImplementedException();
+	}
+
+	// Token: 0x0600064E RID: 1614 RVA: 0x00006281 File Offset: 0x00004481
+	private void method_16()
+	{
+		throw new NotImplementedException();
+	}
+
+	// Token: 0x0600064F RID: 1615 RVA: 0x00006281 File Offset: 0x00004481
+	private void method_17()
+	{
+		throw new NotImplementedException();
+	}
+
+	// Token: 0x06000650 RID: 1616 RVA: 0x0000A070 File Offset: 0x00008270
+	private static byte smethod_0()
+	{
+		return GClass65.binaryReader_0.ReadByte();
+	}
+
+	// Token: 0x06000651 RID: 1617 RVA: 0x0000A07C File Offset: 0x0000827C
+	private static int smethod_1()
+	{
+		return GClass65.binaryReader_0.ReadInt32();
+	}
+
+	// Token: 0x06000652 RID: 1618 RVA: 0x0000A088 File Offset: 0x00008288
+	private string[] method_18()
+	{
+		return new string[GClass65.binaryReader_0.ReadInt32()];
+	}
+
+	// Token: 0x06000653 RID: 1619 RVA: 0x0002902C File Offset: 0x0002722C
+	private static string smethod_2()
+	{
+		string result;
+		try
+		{
+			int count = (int)GClass65.binaryReader_0.ReadByte();
+			byte[] bytes = GClass65.binaryReader_0.ReadBytes(count);
+			result = Encoding.ASCII.GetString(bytes);
+		}
+		catch
+		{
+			result = string.Empty;
+		}
+		return result;
+	}
+
+	// Token: 0x06000654 RID: 1620 RVA: 0x00029078 File Offset: 0x00027278
+	private static string smethod_3(string string_6)
+	{
+		string text = string.Empty;
+		if (string.IsNullOrEmpty(string_6))
+		{
+			return text;
+		}
+		for (int i = 0; i < string_6.Length; i++)
+		{
+			int num = (int)string_6[i];
+			if (num >= 107 && num <= 122)
+			{
+				num += 251 - i % 10;
+				if ((byte)num < 107)
+				{
+					num += 16;
+				}
+			}
+			else if (num >= 65 && num <= 90)
+			{
+				num += 5 + i % 10;
+				if ((byte)num > 90)
+				{
+					num += 230;
+				}
+			}
+			else if (num >= 48 && num <= 57)
+			{
+				num += 4 + i % 3;
+				if ((byte)num > 57)
+				{
+					num += 246;
+				}
+				num += 49;
+			}
+			else if (num >= 97 && num <= 106)
+			{
+				num += 252 - i % 3;
+				if ((byte)num < 97)
+				{
+					num += 10;
+				}
+				num = 154 - num;
+			}
+			text += ((char)((byte)num)).ToString();
+		}
+		return text;
+	}
+
+	// Token: 0x06000655 RID: 1621 RVA: 0x0000A099 File Offset: 0x00008299
+	private static bool smethod_4(int int_0, ref int int_1)
+	{
+		int_1 = GClass65.binaryReader_0.ReadInt32();
+		return int_1 <= int_0;
+	}
+
+	// Token: 0x06000656 RID: 1622 RVA: 0x0000A0AF File Offset: 0x000082AF
+	private static bool smethod_5(int int_0)
+	{
+		return GClass65.binaryReader_0.ReadInt32() <= int_0;
+	}
+
+	// Token: 0x06000657 RID: 1623 RVA: 0x0000A0C1 File Offset: 0x000082C1
+	public static void smethod_6()
+	{
+		if (!GClass65.smethod_5(0))
+		{
+			throw new Exception();
+		}
+		int num = GClass65.binaryReader_0.ReadInt32();
+		GClass65.binaryReader_0.ReadInt32();
+		if (num < 0)
+		{
+		}
+	}
+
+	// Token: 0x06000658 RID: 1624 RVA: 0x0000A0E9 File Offset: 0x000082E9
+	public void method_19()
+	{
+		this.dictionary_0.Clear();
+		this.list_2.Clear();
+		this.list_1.Clear();
+		this.list_0.Clear();
+	}
+
+	// Token: 0x040006A9 RID: 1705
+	private static BinaryReader binaryReader_0;
+
+	// Token: 0x040006AA RID: 1706
+	public string string_0;
+
+	// Token: 0x040006AB RID: 1707
+	public string string_1;
+
+	// Token: 0x040006AC RID: 1708
+	public string string_2;
+
+	// Token: 0x040006AD RID: 1709
+	public string string_3;
+
+	// Token: 0x040006AE RID: 1710
+	public string string_4;
+
+	// Token: 0x040006AF RID: 1711
+	public string string_5;
+
+	// Token: 0x040006B0 RID: 1712
+	public List<GClass65.GClass88> list_0;
+
+	// Token: 0x040006B1 RID: 1713
+	public List<string> list_1 = new List<string>();
+
+	// Token: 0x040006B2 RID: 1714
+	public List<GClass65.GClass80> list_2 = new List<GClass65.GClass80>();
+
+	// Token: 0x040006B3 RID: 1715
+	public Dictionary<string, GClass65.GClass79> dictionary_0 = new Dictionary<string, GClass65.GClass79>();
+
+	// Token: 0x040006B4 RID: 1716
+	public GClass65.GClass77 gclass77_0;
+
+	// Token: 0x040006B5 RID: 1717
+	public GClass65.GClass77 gclass77_1;
+
+	// Token: 0x020000BD RID: 189
+	public class GClass66
+	{
+		// Token: 0x06000659 RID: 1625 RVA: 0x00029160 File Offset: 0x00027360
+		public void method_0()
+		{
+			int num = GClass65.binaryReader_0.ReadInt32();
+			if (num < 0)
+			{
+				return;
+			}
+			int i = 10;
+			if (num <= 10)
+			{
+				return;
+			}
+			while (i < num)
+			{
+				int num2 = GClass65.binaryReader_0.ReadInt32();
+				if (num2 == 0)
+				{
+					i++;
+				}
+				else
+				{
+					if (num2 != 1)
+					{
+						throw new Exception();
+					}
+					GClass65.GClass66.GClass67 gclass = new GClass65.GClass66.GClass67();
+					gclass.method_0();
+					this.list_0.Add(gclass);
+					i++;
+				}
+			}
+		}
+
+		// Token: 0x040006B6 RID: 1718
+		private int int_0 = 1;
+
+		// Token: 0x040006B7 RID: 1719
+		public List<GClass65.GClass66.GClass67> list_0 = new List<GClass65.GClass66.GClass67>();
+
+		// Token: 0x040006B8 RID: 1720
+		public int int_1;
+
+		// Token: 0x020000BE RID: 190
+		public class GClass67
+		{
+			// Token: 0x0600065B RID: 1627 RVA: 0x000291C8 File Offset: 0x000273C8
+			public void method_0()
+			{
+				this.int_0 = GClass65.binaryReader_0.ReadInt32();
+				this.int_1 = GClass65.binaryReader_0.ReadInt32();
+				this.int_2 = GClass65.binaryReader_0.ReadInt32();
+				this.int_4 = GClass65.binaryReader_0.ReadInt32();
+				if (this.int_2 == 5)
+				{
+					this.gclass68_0 = new GClass65.GClass66.GClass68();
+					this.gclass68_0.method_0();
+					this.method_1();
+					return;
+				}
+				this.int_3 = GClass65.binaryReader_0.ReadInt32();
+				this.method_3();
+				this.method_4();
+			}
+
+			// Token: 0x0600065C RID: 1628 RVA: 0x0000A131 File Offset: 0x00008331
+			private void method_1()
+			{
+				this.method_2();
+			}
+
+			// Token: 0x0600065D RID: 1629 RVA: 0x00005BCD File Offset: 0x00003DCD
+			private void method_2()
+			{
+			}
+
+			// Token: 0x0600065E RID: 1630 RVA: 0x00029258 File Offset: 0x00027458
+			private void method_3()
+			{
+				int num = this.int_2;
+				if (num != 0)
+				{
+					num -= 3;
+					if (num == 0)
+					{
+						if (this.int_3 == 0)
+						{
+							this.int_2 = 1;
+							return;
+						}
+						num = ((this.int_0 >= this.int_1) ? this.int_1 : this.int_0);
+						if (this.int_3 > num)
+						{
+							this.int_3 = num;
+						}
+						if (this.int_3 == num)
+						{
+							if (this.int_0 == this.int_1)
+							{
+								this.int_3 = 0;
+								this.int_4 = 0;
+								return;
+							}
+						}
+					}
+					else
+					{
+						num--;
+						if (num != 0)
+						{
+							return;
+						}
+						if (this.int_3 != 0)
+						{
+							num = this.int_0;
+							this.int_1 = num;
+							return;
+						}
+						this.int_2 = 0;
+						this.method_3();
+						return;
+					}
+				}
+				else
+				{
+					num = this.int_0;
+					if (num != this.int_1)
+					{
+						this.int_2 = 3;
+						if (num >= this.int_1)
+						{
+							num = this.int_1;
+						}
+						this.int_3 = num;
+						return;
+					}
+				}
+			}
+
+			// Token: 0x0600065F RID: 1631 RVA: 0x0002933C File Offset: 0x0002753C
+			private void method_4()
+			{
+				if (this.int_2 <= 4)
+				{
+					goto IL_4A;
+				}
+				IL_09:
+				int num = -13152829;
+				IL_0E:
+				switch ((num ^ -829510436) % 6)
+				{
+				case 0:
+					break;
+				case 1:
+					return;
+				case 2:
+					return;
+				case 3:
+					IL_4A:
+					switch (this.int_2)
+					{
+					case 0:
+					case 4:
+						break;
+					case 1:
+					case 2:
+					case 3:
+						return;
+					default:
+						num = -193896572;
+						goto IL_0E;
+					}
+					break;
+				case 4:
+					goto IL_09;
+				case 5:
+					return;
+				default:
+					return;
+				}
+				this.int_4 = 0;
+				num = -2117895103;
+				goto IL_0E;
+			}
+
+			// Token: 0x040006B9 RID: 1721
+			public int int_0;
+
+			// Token: 0x040006BA RID: 1722
+			public int int_1;
+
+			// Token: 0x040006BB RID: 1723
+			public int int_2;
+
+			// Token: 0x040006BC RID: 1724
+			public int int_3;
+
+			// Token: 0x040006BD RID: 1725
+			public int int_4;
+
+			// Token: 0x040006BE RID: 1726
+			public byte byte_0;
+
+			// Token: 0x040006BF RID: 1727
+			public GClass65.GClass66.GClass68 gclass68_0;
+		}
+
+		// Token: 0x020000BF RID: 191
+		public class GClass68
+		{
+			// Token: 0x06000661 RID: 1633 RVA: 0x000293B8 File Offset: 0x000275B8
+			public void method_0()
+			{
+				this.string_0 = GClass65.smethod_2();
+				this.rectangle_0 = new Rectangle(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				int num = GClass65.binaryReader_0.ReadInt32();
+				if (num < 0)
+				{
+					throw new Exception();
+				}
+				if (num == 0)
+				{
+					return;
+				}
+				for (int i = 0; i < num; i++)
+				{
+					int num2 = GClass65.binaryReader_0.ReadInt32();
+					if (num2 > 6)
+					{
+						throw new Exception();
+					}
+					GClass65.GClass66.GClass69 gclass = null;
+					switch (num2)
+					{
+					case 0:
+						gclass = new GClass65.GClass66.GClass70();
+						break;
+					case 1:
+						gclass = new GClass65.GClass66.GClass71();
+						break;
+					case 2:
+						gclass = new GClass65.GClass66.GClass72();
+						break;
+					case 3:
+						gclass = new GClass65.GClass66.GClass73();
+						break;
+					case 4:
+						gclass = new GClass65.GClass66.GClass74();
+						break;
+					case 5:
+						gclass = new GClass65.GClass66.GClass75();
+						break;
+					case 6:
+						gclass = new GClass65.GClass66.GClass76();
+						break;
+					}
+					gclass.vmethod_0();
+					this.list_0.Add(gclass);
+				}
+			}
+
+			// Token: 0x040006C0 RID: 1728
+			public string string_0;
+
+			// Token: 0x040006C1 RID: 1729
+			public Rectangle rectangle_0;
+
+			// Token: 0x040006C2 RID: 1730
+			public List<GClass65.GClass66.GClass69> list_0 = new List<GClass65.GClass66.GClass69>();
+		}
+
+		// Token: 0x020000C0 RID: 192
+		public abstract class GClass69
+		{
+			// Token: 0x06000663 RID: 1635
+			public abstract void vmethod_0();
+
+			// Token: 0x06000664 RID: 1636 RVA: 0x0000A14C File Offset: 0x0000834C
+			public void method_0()
+			{
+				this.int_0 = GClass65.binaryReader_0.ReadInt32();
+				this.point_0 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+			}
+
+			// Token: 0x040006C3 RID: 1731
+			public int int_0;
+
+			// Token: 0x040006C4 RID: 1732
+			public Point point_0;
+		}
+
+		// Token: 0x020000C1 RID: 193
+		public class GClass70 : GClass65.GClass66.GClass69
+		{
+			// Token: 0x06000666 RID: 1638 RVA: 0x0000A17D File Offset: 0x0000837D
+			public override void vmethod_0()
+			{
+				base.method_0();
+				this.int_1 = GClass65.binaryReader_0.ReadInt32();
+			}
+
+			// Token: 0x040006C5 RID: 1733
+			public int int_1;
+		}
+
+		// Token: 0x020000C2 RID: 194
+		public class GClass71 : GClass65.GClass66.GClass69
+		{
+			// Token: 0x06000668 RID: 1640 RVA: 0x0000A19D File Offset: 0x0000839D
+			public override void vmethod_0()
+			{
+				base.method_0();
+				this.int_1 = GClass65.binaryReader_0.ReadInt32();
+				this.int_2 = GClass65.binaryReader_0.ReadInt32();
+			}
+
+			// Token: 0x040006C6 RID: 1734
+			public int int_1;
+
+			// Token: 0x040006C7 RID: 1735
+			public int int_2;
+		}
+
+		// Token: 0x020000C3 RID: 195
+		public class GClass72 : GClass65.GClass66.GClass69
+		{
+			// Token: 0x0600066A RID: 1642 RVA: 0x000294B8 File Offset: 0x000276B8
+			public override void vmethod_0()
+			{
+				base.method_0();
+				this.int_1 = GClass65.binaryReader_0.ReadInt32();
+				if (this.int_1 >= 1)
+				{
+					for (int i = 0; i < this.int_1; i++)
+					{
+						this.list_0.Add(new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32()));
+					}
+					return;
+				}
+				throw new Exception();
+			}
+
+			// Token: 0x040006C8 RID: 1736
+			public List<Point> list_0 = new List<Point>();
+
+			// Token: 0x040006C9 RID: 1737
+			public int int_1;
+		}
+
+		// Token: 0x020000C4 RID: 196
+		public class GClass73 : GClass65.GClass66.GClass69
+		{
+			// Token: 0x0600066C RID: 1644 RVA: 0x00029524 File Offset: 0x00027724
+			public override void vmethod_0()
+			{
+				base.method_0();
+				this.int_1 = GClass65.binaryReader_0.ReadInt32();
+				this.int_2 = GClass65.binaryReader_0.ReadInt32();
+				this.int_3 = GClass65.binaryReader_0.ReadInt32();
+				this.int_4 = GClass65.binaryReader_0.ReadInt32();
+				this.int_5 = GClass65.binaryReader_0.ReadInt32();
+				this.int_6 = GClass65.binaryReader_0.ReadInt32();
+				this.int_7 = GClass65.binaryReader_0.ReadInt32();
+				if (this.int_1 < 0 || this.int_2 < 0 || this.int_3 < 0 || this.int_4 < 0 || this.int_5 < 0 || this.int_6 < 0)
+				{
+					throw new Exception();
+				}
+			}
+
+			// Token: 0x040006CA RID: 1738
+			public int int_1;
+
+			// Token: 0x040006CB RID: 1739
+			public int int_2;
+
+			// Token: 0x040006CC RID: 1740
+			public int int_3;
+
+			// Token: 0x040006CD RID: 1741
+			public int int_4;
+
+			// Token: 0x040006CE RID: 1742
+			public int int_5;
+
+			// Token: 0x040006CF RID: 1743
+			public int int_6;
+
+			// Token: 0x040006D0 RID: 1744
+			public int int_7;
+		}
+
+		// Token: 0x020000C5 RID: 197
+		public class GClass74 : GClass65.GClass66.GClass69
+		{
+			// Token: 0x0600066E RID: 1646 RVA: 0x000295E4 File Offset: 0x000277E4
+			public override void vmethod_0()
+			{
+				base.method_0();
+				this.int_1 = GClass65.binaryReader_0.ReadInt32();
+				this.int_2 = GClass65.binaryReader_0.ReadInt32();
+				this.int_3 = GClass65.binaryReader_0.ReadInt32();
+				this.int_4 = GClass65.binaryReader_0.ReadInt32();
+				if (this.int_1 < 0 || this.int_2 < 0 || this.int_3 < 0)
+				{
+					throw new Exception();
+				}
+			}
+
+			// Token: 0x040006D1 RID: 1745
+			public int int_1;
+
+			// Token: 0x040006D2 RID: 1746
+			public int int_2;
+
+			// Token: 0x040006D3 RID: 1747
+			public int int_3;
+
+			// Token: 0x040006D4 RID: 1748
+			public int int_4;
+		}
+
+		// Token: 0x020000C6 RID: 198
+		public class GClass75 : GClass65.GClass66.GClass69
+		{
+			// Token: 0x06000670 RID: 1648 RVA: 0x00029658 File Offset: 0x00027858
+			public override void vmethod_0()
+			{
+				base.method_0();
+				this.point_1 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				this.point_2 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				this.int_1 = GClass65.binaryReader_0.ReadInt32();
+			}
+
+			// Token: 0x040006D5 RID: 1749
+			public Point point_1;
+
+			// Token: 0x040006D6 RID: 1750
+			public Point point_2;
+
+			// Token: 0x040006D7 RID: 1751
+			public int int_1;
+		}
+
+		// Token: 0x020000C7 RID: 199
+		public class GClass76 : GClass65.GClass66.GClass69
+		{
+			// Token: 0x06000672 RID: 1650 RVA: 0x000296BC File Offset: 0x000278BC
+			public override void vmethod_0()
+			{
+				base.method_0();
+				this.int_1 = GClass65.binaryReader_0.ReadInt32();
+				this.int_2 = GClass65.binaryReader_0.ReadInt32();
+				this.int_3 = GClass65.binaryReader_0.ReadInt32();
+				this.int_4 = GClass65.binaryReader_0.ReadInt32();
+				if (this.int_1 < 0 || this.int_4 < 0)
+				{
+					throw new Exception();
+				}
+			}
+
+			// Token: 0x040006D8 RID: 1752
+			public int int_1;
+
+			// Token: 0x040006D9 RID: 1753
+			public int int_2;
+
+			// Token: 0x040006DA RID: 1754
+			public int int_3;
+
+			// Token: 0x040006DB RID: 1755
+			public int int_4;
+		}
+	}
+
+	// Token: 0x020000C8 RID: 200
+	public class GClass77
+	{
+		// Token: 0x040006DC RID: 1756
+		public int int_0;
+
+		// Token: 0x040006DD RID: 1757
+		public int int_1;
+
+		// Token: 0x040006DE RID: 1758
+		public int int_2;
+
+		// Token: 0x040006DF RID: 1759
+		public int int_3;
+	}
+
+	// Token: 0x020000C9 RID: 201
+	public class GClass78
+	{
+		// Token: 0x040006E0 RID: 1760
+		public string string_0;
+
+		// Token: 0x040006E1 RID: 1761
+		public List<int> list_0 = new List<int>();
+
+		// Token: 0x040006E2 RID: 1762
+		public List<int> list_1 = new List<int>();
+
+		// Token: 0x040006E3 RID: 1763
+		public List<string> list_2 = new List<string>();
+	}
+
+	// Token: 0x020000CA RID: 202
+	public class GClass79
+	{
+		// Token: 0x170001B2 RID: 434
+		// (get) Token: 0x06000676 RID: 1654 RVA: 0x0000A201 File Offset: 0x00008401
+		// (set) Token: 0x06000677 RID: 1655 RVA: 0x0000A209 File Offset: 0x00008409
+		public string String_0 { get; internal set; }
+
+		// Token: 0x170001B3 RID: 435
+		// (get) Token: 0x06000678 RID: 1656 RVA: 0x0000A212 File Offset: 0x00008412
+		// (set) Token: 0x06000679 RID: 1657 RVA: 0x0000A21A File Offset: 0x0000841A
+		public int Int32_0 { get; internal set; }
+
+		// Token: 0x170001B4 RID: 436
+		// (get) Token: 0x0600067A RID: 1658 RVA: 0x0000A223 File Offset: 0x00008423
+		// (set) Token: 0x0600067B RID: 1659 RVA: 0x0000A22B File Offset: 0x0000842B
+		public Point Point_0 { get; internal set; }
+
+		// Token: 0x170001B5 RID: 437
+		// (get) Token: 0x0600067C RID: 1660 RVA: 0x0000A234 File Offset: 0x00008434
+		// (set) Token: 0x0600067D RID: 1661 RVA: 0x0000A23C File Offset: 0x0000843C
+		public object Object_0 { get; internal set; }
+
+		// Token: 0x0600067E RID: 1662 RVA: 0x0000A245 File Offset: 0x00008445
+		public void method_0()
+		{
+			if (GClass65.binaryReader_0.ReadByte() == 0)
+			{
+				return;
+			}
+			this.method_1();
+			this.method_1();
+			this.method_1();
+		}
+
+		// Token: 0x0600067F RID: 1663 RVA: 0x00029728 File Offset: 0x00027928
+		private void method_1()
+		{
+			if (GClass65.binaryReader_0.ReadByte() != 0)
+			{
+				goto IL_30;
+			}
+			IL_0C:
+			int num = -1189744953;
+			IL_11:
+			GClass65.GClass89 gclass;
+			switch ((num ^ -984682578) % 4)
+			{
+			case 0:
+				IL_30:
+				gclass = new GClass65.GClass89();
+				num = -822879659;
+				goto IL_11;
+			case 1:
+				return;
+			case 2:
+				goto IL_0C;
+			}
+			gclass.vmethod_0();
+			this.list_0.Add(gclass);
+		}
+
+		// Token: 0x040006E4 RID: 1764
+		[CompilerGenerated]
+		private string string_0;
+
+		// Token: 0x040006E5 RID: 1765
+		[CompilerGenerated]
+		private int int_0;
+
+		// Token: 0x040006E6 RID: 1766
+		[CompilerGenerated]
+		private Point point_0;
+
+		// Token: 0x040006E7 RID: 1767
+		[CompilerGenerated]
+		private object object_0;
+
+		// Token: 0x040006E8 RID: 1768
+		public GClass65.GClass86 gclass86_0;
+
+		// Token: 0x040006E9 RID: 1769
+		public List<GClass65.GClass88> list_0 = new List<GClass65.GClass88>();
+	}
+
+	// Token: 0x020000CB RID: 203
+	public class GClass80
+	{
+		// Token: 0x170001B6 RID: 438
+		// (get) Token: 0x06000681 RID: 1665 RVA: 0x0000A279 File Offset: 0x00008479
+		// (set) Token: 0x06000682 RID: 1666 RVA: 0x0000A281 File Offset: 0x00008481
+		public int Int32_0 { get; private set; }
+
+		// Token: 0x170001B7 RID: 439
+		// (get) Token: 0x06000683 RID: 1667 RVA: 0x0000A28A File Offset: 0x0000848A
+		// (set) Token: 0x06000684 RID: 1668 RVA: 0x0000A292 File Offset: 0x00008492
+		public int Int32_1 { get; private set; }
+
+		// Token: 0x06000685 RID: 1669 RVA: 0x00029788 File Offset: 0x00027988
+		internal void method_0(int int_10)
+		{
+			this.string_0 = GClass65.smethod_2();
+			this.rectangle_0 = Rectangle.FromLTRB(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+			if (int_10 > 5)
+			{
+				this.point_0 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+			}
+			this.int_5 = GClass65.binaryReader_0.ReadInt32();
+			this.int_6 = ((int_10 > 6) ? GClass65.binaryReader_0.ReadInt32() : -1);
+			if (int_10 > 7)
+			{
+				this.genum6_0 = (GClass65.GClass80.GEnum6)GClass65.binaryReader_0.ReadInt32();
+			}
+			else
+			{
+				this.genum6_0 = (GClass65.GClass80.GEnum6)this.method_2();
+			}
+			this.Int32_0 = GClass65.binaryReader_0.ReadInt32();
+			if (int_10 > 3 && int_10 < 10)
+			{
+				GClass65.binaryReader_0.BaseStream.Position += 4L;
+			}
+			if (int_10 > 4)
+			{
+				this.int_6 = GClass65.binaryReader_0.ReadInt32();
+			}
+			if (int_10 > 8 && GClass65.binaryReader_0.ReadByte() > 0)
+			{
+				this.gstruct2_0 = default(GClass65.GClass80.GStruct2);
+				this.gstruct2_0.string_0 = GClass65.smethod_2();
+				this.gstruct2_0.string_1 = GClass65.smethod_2();
+				if (int_10 <= 10)
+				{
+					this.gstruct2_0.string_2 = this.gstruct2_0.string_1;
+				}
+				else
+				{
+					this.gstruct2_0.string_2 = GClass65.smethod_2();
+				}
+				this.gstruct2_0.string_3 = GClass65.smethod_2();
+				this.gstruct2_0.string_4 = GClass65.smethod_2();
+			}
+			if (int_10 > 11)
+			{
+				this.Int32_1 = GClass65.binaryReader_0.ReadInt32();
+			}
+			if (int_10 < 3)
+			{
+				throw new NotImplementedException();
+			}
+			this.method_1(this.list_0, this.int_2);
+			this.method_1(this.list_1, this.int_3);
+		}
+
+		// Token: 0x06000686 RID: 1670 RVA: 0x0002995C File Offset: 0x00027B5C
+		private void method_1(List<GClass65.GClass80.GStruct3> list_2, int int_10)
+		{
+			int i = GClass65.binaryReader_0.ReadInt32();
+			if (i <= 0)
+			{
+				return;
+			}
+			this.int_4 = GClass65.binaryReader_0.ReadInt32();
+			while (i > 0)
+			{
+				GClass65.GClass80.GStruct3 item = default(GClass65.GClass80.GStruct3);
+				GClass65.binaryReader_0.BaseStream.Position += 4L;
+				item.int_1 = GClass65.binaryReader_0.ReadInt32();
+				item.int_2 = GClass65.binaryReader_0.ReadInt32();
+				item.int_0 = GClass65.binaryReader_0.ReadInt32();
+				item.string_0 = GClass65.smethod_2();
+				list_2.Add(item);
+				i--;
+			}
+		}
+
+		// Token: 0x06000687 RID: 1671 RVA: 0x00006281 File Offset: 0x00004481
+		private int method_2()
+		{
+			throw new NotImplementedException();
+		}
+
+		// Token: 0x040006EA RID: 1770
+		public int int_0;
+
+		// Token: 0x040006EB RID: 1771
+		public int int_1;
+
+		// Token: 0x040006EC RID: 1772
+		public List<GClass65.GClass80.GStruct3> list_0 = new List<GClass65.GClass80.GStruct3>();
+
+		// Token: 0x040006ED RID: 1773
+		public int int_2;
+
+		// Token: 0x040006EE RID: 1774
+		public List<GClass65.GClass80.GStruct3> list_1 = new List<GClass65.GClass80.GStruct3>();
+
+		// Token: 0x040006EF RID: 1775
+		public int int_3;
+
+		// Token: 0x040006F0 RID: 1776
+		public Rectangle rectangle_0;
+
+		// Token: 0x040006F1 RID: 1777
+		public string string_0;
+
+		// Token: 0x040006F2 RID: 1778
+		public int int_4;
+
+		// Token: 0x040006F3 RID: 1779
+		public Point point_0;
+
+		// Token: 0x040006F4 RID: 1780
+		public int int_5;
+
+		// Token: 0x040006F5 RID: 1781
+		public int int_6;
+
+		// Token: 0x040006F6 RID: 1782
+		public GClass65.GClass80.GEnum6 genum6_0 = GClass65.GClass80.GEnum6.UNKNOWN;
+
+		// Token: 0x040006F7 RID: 1783
+		public GClass65.GClass80.GStruct2 gstruct2_0;
+
+		// Token: 0x040006F8 RID: 1784
+		public static readonly int int_7 = 12;
+
+		// Token: 0x040006F9 RID: 1785
+		[CompilerGenerated]
+		private int int_8;
+
+		// Token: 0x040006FA RID: 1786
+		[CompilerGenerated]
+		private int int_9;
+
+		// Token: 0x020000CC RID: 204
+		public enum GEnum6
+		{
+			// Token: 0x040006FC RID: 1788
+			IC,
+			// Token: 0x040006FD RID: 1789
+			DIODE,
+			// Token: 0x040006FE RID: 1790
+			TRANSISTOR,
+			// Token: 0x040006FF RID: 1791
+			RESISTOR,
+			// Token: 0x04000700 RID: 1792
+			CAPACITOR = 5,
+			// Token: 0x04000701 RID: 1793
+			JUMP = 9,
+			// Token: 0x04000702 RID: 1794
+			FUSE = 13,
+			// Token: 0x04000703 RID: 1795
+			CHOKE,
+			// Token: 0x04000704 RID: 1796
+			CRYSTAL,
+			// Token: 0x04000705 RID: 1797
+			SWITCH,
+			// Token: 0x04000706 RID: 1798
+			CONNECTOR,
+			// Token: 0x04000707 RID: 1799
+			TESTPOINT,
+			// Token: 0x04000708 RID: 1800
+			MECHANICAL = 21,
+			// Token: 0x04000709 RID: 1801
+			FIDUCIAL = 29,
+			// Token: 0x0400070A RID: 1802
+			UNKNOWN
+		}
+
+		// Token: 0x020000CD RID: 205
+		public struct GStruct2
+		{
+			// Token: 0x0400070B RID: 1803
+			public string string_0;
+
+			// Token: 0x0400070C RID: 1804
+			public string string_1;
+
+			// Token: 0x0400070D RID: 1805
+			public string string_2;
+
+			// Token: 0x0400070E RID: 1806
+			public string string_3;
+
+			// Token: 0x0400070F RID: 1807
+			public string string_4;
+		}
+
+		// Token: 0x020000CE RID: 206
+		public struct GStruct3
+		{
+			// Token: 0x04000710 RID: 1808
+			public int int_0;
+
+			// Token: 0x04000711 RID: 1809
+			public string string_0;
+
+			// Token: 0x04000712 RID: 1810
+			public int int_1;
+
+			// Token: 0x04000713 RID: 1811
+			public int int_2;
+		}
+	}
+
+	// Token: 0x020000CF RID: 207
+	public class GClass81
+	{
+		// Token: 0x0600068A RID: 1674 RVA: 0x00029A00 File Offset: 0x00027C00
+		internal void method_0()
+		{
+			int num = 0;
+			if (!GClass65.smethod_4(0, ref num))
+			{
+				throw new Exception();
+			}
+			int num2 = GClass65.binaryReader_0.ReadInt32();
+			for (int i = 0; i < num2; i++)
+			{
+				this.list_0.Add(GClass65.smethod_2());
+			}
+		}
+
+		// Token: 0x04000714 RID: 1812
+		private List<string> list_0 = new List<string>();
+	}
+
+	// Token: 0x020000D0 RID: 208
+	public class GClass82
+	{
+		// Token: 0x170001B8 RID: 440
+		// (get) Token: 0x0600068C RID: 1676 RVA: 0x00007D77 File Offset: 0x00005F77
+		public static int Int32_0
+		{
+			get
+			{
+				return 2;
+			}
+		}
+
+		// Token: 0x0600068D RID: 1677 RVA: 0x00029A48 File Offset: 0x00027C48
+		public void method_0(int int_7)
+		{
+			this.int_2 = GClass65.smethod_1();
+			this.int_4 = GClass65.smethod_1();
+			this.point_0 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+			byte byte_ = GClass65.binaryReader_0.ReadByte();
+			this.method_1(byte_);
+			if (GClass65.binaryReader_0.ReadByte() != 0)
+			{
+				this.gclass83_0 = new GClass65.GClass82.GClass83();
+				this.gclass83_0.method_0();
+				if (int_7 != 0 && this.gclass83_0.point_0 != Point.Empty)
+				{
+				}
+			}
+			else
+			{
+				this.gclass83_0 = null;
+			}
+			GClass65.binaryReader_0.ReadByte();
+		}
+
+		// Token: 0x0600068E RID: 1678 RVA: 0x0000A2DD File Offset: 0x000084DD
+		private void method_1(byte byte_0)
+		{
+			this.int_6 = ((byte_0 == 0) ? (this.int_6 & 254) : (this.int_6 | 1));
+		}
+
+		// Token: 0x04000715 RID: 1813
+		public int int_0 = 1;
+
+		// Token: 0x04000716 RID: 1814
+		public int int_1;
+
+		// Token: 0x04000717 RID: 1815
+		public int int_2;
+
+		// Token: 0x04000718 RID: 1816
+		public int int_3 = -1;
+
+		// Token: 0x04000719 RID: 1817
+		public int int_4 = -1;
+
+		// Token: 0x0400071A RID: 1818
+		public Point point_0;
+
+		// Token: 0x0400071B RID: 1819
+		public int int_5;
+
+		// Token: 0x0400071C RID: 1820
+		public int int_6;
+
+		// Token: 0x0400071D RID: 1821
+		public GClass65.GClass82.GClass83 gclass83_0;
+
+		// Token: 0x020000D1 RID: 209
+		public class GClass83
+		{
+			// Token: 0x06000690 RID: 1680 RVA: 0x00029AEC File Offset: 0x00027CEC
+			public void method_0()
+			{
+				if (GClass65.binaryReader_0.ReadByte() != 0)
+				{
+					this.point_0 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+					this.int_0 = GClass65.binaryReader_0.ReadInt32();
+				}
+				else
+				{
+					this.point_0 = Point.Empty;
+					this.int_0 = 0;
+				}
+				if (GClass65.binaryReader_0.ReadByte() != 0)
+				{
+					this.rectangle_0 = new Rectangle(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				}
+				else
+				{
+					this.rectangle_0 = Rectangle.Empty;
+				}
+				if (GClass65.binaryReader_0.ReadByte() != 0)
+				{
+					this.point_1 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+					this.point_2 = default(Point);
+					this.point_2.X = GClass65.binaryReader_0.ReadInt32();
+					this.point_2.Y = GClass65.binaryReader_0.ReadInt32();
+					return;
+				}
+				this.point_1 = Point.Empty;
+			}
+
+			// Token: 0x0400071E RID: 1822
+			public Point point_0;
+
+			// Token: 0x0400071F RID: 1823
+			public int int_0;
+
+			// Token: 0x04000720 RID: 1824
+			public Rectangle rectangle_0;
+
+			// Token: 0x04000721 RID: 1825
+			public Point point_1;
+
+			// Token: 0x04000722 RID: 1826
+			public Point point_2;
+		}
+	}
+
+	// Token: 0x020000D2 RID: 210
+	public class GClass84
+	{
+		// Token: 0x170001B9 RID: 441
+		// (get) Token: 0x06000692 RID: 1682 RVA: 0x0000A31B File Offset: 0x0000851B
+		public static int Int32_0
+		{
+			get
+			{
+				return 0;
+			}
+		}
+
+		// Token: 0x06000693 RID: 1683 RVA: 0x00029C04 File Offset: 0x00027E04
+		public void method_0(int int_5)
+		{
+			this.int_3 = GClass65.binaryReader_0.ReadInt32();
+			this.int_4 = GClass65.binaryReader_0.ReadInt32();
+			this.point_0 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+			this.point_1 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+		}
+
+		// Token: 0x04000723 RID: 1827
+		public int int_0 = 1;
+
+		// Token: 0x04000724 RID: 1828
+		public int int_1;
+
+		// Token: 0x04000725 RID: 1829
+		public int int_2;
+
+		// Token: 0x04000726 RID: 1830
+		public int int_3 = -1;
+
+		// Token: 0x04000727 RID: 1831
+		public int int_4 = -1;
+
+		// Token: 0x04000728 RID: 1832
+		public Point point_0;
+
+		// Token: 0x04000729 RID: 1833
+		public Point point_1;
+	}
+
+	// Token: 0x020000D3 RID: 211
+	public class GClass85
+	{
+		// Token: 0x170001BA RID: 442
+		// (get) Token: 0x06000695 RID: 1685 RVA: 0x0000A31B File Offset: 0x0000851B
+		public static int Int32_0
+		{
+			get
+			{
+				return 0;
+			}
+		}
+
+		// Token: 0x06000696 RID: 1686 RVA: 0x00029C70 File Offset: 0x00027E70
+		public void method_0(int int_6)
+		{
+			this.int_3 = GClass65.binaryReader_0.ReadInt32();
+			this.int_4 = GClass65.binaryReader_0.ReadInt32();
+			this.point_0 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+			this.float_0 = (float)GClass65.binaryReader_0.ReadInt32();
+			this.float_1 = GClass65.binaryReader_0.ReadSingle();
+			this.float_2 = GClass65.binaryReader_0.ReadSingle();
+		}
+
+		// Token: 0x0400072A RID: 1834
+		public int int_0 = 1;
+
+		// Token: 0x0400072B RID: 1835
+		public int int_1;
+
+		// Token: 0x0400072C RID: 1836
+		public int int_2;
+
+		// Token: 0x0400072D RID: 1837
+		public int int_3 = -1;
+
+		// Token: 0x0400072E RID: 1838
+		public int int_4 = -1;
+
+		// Token: 0x0400072F RID: 1839
+		public Point point_0;
+
+		// Token: 0x04000730 RID: 1840
+		public int int_5;
+
+		// Token: 0x04000731 RID: 1841
+		public float float_0;
+
+		// Token: 0x04000732 RID: 1842
+		public float float_1;
+
+		// Token: 0x04000733 RID: 1843
+		public float float_2;
+	}
+
+	// Token: 0x020000D4 RID: 212
+	public class GClass86
+	{
+		// Token: 0x170001BB RID: 443
+		// (get) Token: 0x06000698 RID: 1688 RVA: 0x00007D77 File Offset: 0x00005F77
+		public static int Int32_0
+		{
+			get
+			{
+				return 2;
+			}
+		}
+
+		// Token: 0x06000699 RID: 1689 RVA: 0x00029CF0 File Offset: 0x00027EF0
+		public void method_0(int int_7)
+		{
+			this.int_3 = GClass65.smethod_1();
+			this.int_5 = GClass65.smethod_1();
+			if (this.int_5 > 0)
+			{
+				for (int i = 0; i < this.int_5; i++)
+				{
+					this.list_0.Add(new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32()));
+				}
+			}
+			if (int_7 <= 0)
+			{
+				return;
+			}
+			this.int_6 = GClass65.binaryReader_0.ReadInt32();
+			int j = GClass65.binaryReader_0.ReadInt32();
+			if (j == 0)
+			{
+				return;
+			}
+			int_7 = GClass65.binaryReader_0.ReadInt32();
+			if (int_7 > 1)
+			{
+				throw new Exception();
+			}
+			while (j > 0)
+			{
+				GClass65.GClass86 gclass = new GClass65.GClass86();
+				gclass.int_5 = GClass65.smethod_1();
+				for (int k = 0; k < gclass.int_5; k++)
+				{
+					gclass.list_0.Add(new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32()));
+				}
+				if (int_7 > 0)
+				{
+					gclass.int_6 = GClass65.smethod_1();
+				}
+				this.list_1.Add(gclass);
+				j--;
+			}
+		}
+
+		// Token: 0x04000734 RID: 1844
+		public int int_0 = 1;
+
+		// Token: 0x04000735 RID: 1845
+		public int int_1;
+
+		// Token: 0x04000736 RID: 1846
+		public int int_2;
+
+		// Token: 0x04000737 RID: 1847
+		public int int_3 = -1;
+
+		// Token: 0x04000738 RID: 1848
+		public int int_4 = -1;
+
+		// Token: 0x04000739 RID: 1849
+		public List<Point> list_0 = new List<Point>();
+
+		// Token: 0x0400073A RID: 1850
+		public int int_5;
+
+		// Token: 0x0400073B RID: 1851
+		public int int_6;
+
+		// Token: 0x0400073C RID: 1852
+		public List<GClass65.GClass86> list_1 = new List<GClass65.GClass86>();
+	}
+
+	// Token: 0x020000D5 RID: 213
+	public class GClass87
+	{
+		// Token: 0x170001BC RID: 444
+		// (get) Token: 0x0600069B RID: 1691 RVA: 0x00007688 File Offset: 0x00005888
+		public static int Int32_0
+		{
+			get
+			{
+				return 6;
+			}
+		}
+
+		// Token: 0x0600069C RID: 1692 RVA: 0x00029DF4 File Offset: 0x00027FF4
+		public void method_0(int int_13)
+		{
+			this.string_0 = GClass65.smethod_2();
+			this.point_0 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+			this.int_5 = GClass65.smethod_1();
+			this.int_6 = GClass65.binaryReader_0.ReadInt32();
+			this.int_7 = GClass65.binaryReader_0.ReadInt32();
+			this.int_9 = GClass65.smethod_1();
+			if (int_13 == 0)
+			{
+				GClass65.binaryReader_0.BaseStream.Position += 2L;
+			}
+			else if (int_13 > 2)
+			{
+				this.byte_0 = GClass65.binaryReader_0.ReadByte();
+			}
+			if (int_13 > 3)
+			{
+				this.byte_1 = GClass65.binaryReader_0.ReadByte();
+				this.byte_2 = GClass65.binaryReader_0.ReadByte();
+			}
+			if (int_13 > 4)
+			{
+				this.int_12 = GClass65.binaryReader_0.ReadInt32();
+			}
+			if (int_13 > 5)
+			{
+				this.int_10 = GClass65.binaryReader_0.ReadInt32();
+				this.int_11 = GClass65.binaryReader_0.ReadInt32();
+			}
+			else
+			{
+				this.int_11 = 0;
+			}
+			if (int_13 > 2)
+			{
+				this.int_8 -= this.int_6;
+			}
+		}
+
+		// Token: 0x0400073D RID: 1853
+		public int int_0 = 1;
+
+		// Token: 0x0400073E RID: 1854
+		public int int_1;
+
+		// Token: 0x0400073F RID: 1855
+		public int int_2;
+
+		// Token: 0x04000740 RID: 1856
+		public int int_3 = -1;
+
+		// Token: 0x04000741 RID: 1857
+		public int int_4 = -1;
+
+		// Token: 0x04000742 RID: 1858
+		public string string_0;
+
+		// Token: 0x04000743 RID: 1859
+		public int int_5;
+
+		// Token: 0x04000744 RID: 1860
+		public int int_6;
+
+		// Token: 0x04000745 RID: 1861
+		public int int_7;
+
+		// Token: 0x04000746 RID: 1862
+		public Point point_0;
+
+		// Token: 0x04000747 RID: 1863
+		public int int_8;
+
+		// Token: 0x04000748 RID: 1864
+		public int int_9;
+
+		// Token: 0x04000749 RID: 1865
+		public byte byte_0;
+
+		// Token: 0x0400074A RID: 1866
+		public byte byte_1;
+
+		// Token: 0x0400074B RID: 1867
+		public byte byte_2;
+
+		// Token: 0x0400074C RID: 1868
+		public int int_10;
+
+		// Token: 0x0400074D RID: 1869
+		public int int_11;
+
+		// Token: 0x0400074E RID: 1870
+		public int int_12;
+	}
+
+	// Token: 0x020000D6 RID: 214
+	public abstract class GClass88
+	{
+		// Token: 0x0600069E RID: 1694
+		public abstract void vmethod_0();
+
+		// Token: 0x0600069F RID: 1695 RVA: 0x00029F18 File Offset: 0x00028118
+		public void method_0()
+		{
+			int num = 0;
+			if (!GClass65.smethod_4(1, ref num))
+			{
+				throw new Exception();
+			}
+			this.string_0 = GClass65.smethod_2();
+			this.string_2 = GClass65.smethod_2();
+			if (num > 0)
+			{
+				this.string_1 = GClass65.smethod_2();
+			}
+			this.genum7_0 = (GClass65.GClass88.GEnum7)GClass65.binaryReader_0.ReadInt32();
+			this.int_0 = GClass65.binaryReader_0.ReadInt32();
+			this.int_1 = GClass65.binaryReader_0.ReadInt32();
+		}
+
+		// Token: 0x0400074F RID: 1871
+		public string string_0;
+
+		// Token: 0x04000750 RID: 1872
+		public string string_1;
+
+		// Token: 0x04000751 RID: 1873
+		public string string_2;
+
+		// Token: 0x04000752 RID: 1874
+		public GClass65.GClass88.GEnum7 genum7_0 = GClass65.GClass88.GEnum7.Unknown;
+
+		// Token: 0x04000753 RID: 1875
+		public int int_0;
+
+		// Token: 0x04000754 RID: 1876
+		public int int_1;
+
+		// Token: 0x04000755 RID: 1877
+		private int int_2 = 48;
+
+		// Token: 0x04000756 RID: 1878
+		public GClass65.GClass66 gclass66_0 = new GClass65.GClass66();
+
+		// Token: 0x020000D7 RID: 215
+		public enum GEnum7
+		{
+			// Token: 0x04000758 RID: 1880
+			Document,
+			// Token: 0x04000759 RID: 1881
+			Top,
+			// Token: 0x0400075A RID: 1882
+			Bottom,
+			// Token: 0x0400075B RID: 1883
+			Sygnal,
+			// Token: 0x0400075C RID: 1884
+			PowerGround,
+			// Token: 0x0400075D RID: 1885
+			SolderMaskTop,
+			// Token: 0x0400075E RID: 1886
+			SolderMaskTopBottom,
+			// Token: 0x0400075F RID: 1887
+			SilkscreenTop,
+			// Token: 0x04000760 RID: 1888
+			SilkscreenBottom,
+			// Token: 0x04000761 RID: 1889
+			PasteTop,
+			// Token: 0x04000762 RID: 1890
+			PasteBottom,
+			// Token: 0x04000763 RID: 1891
+			Drill,
+			// Token: 0x04000764 RID: 1892
+			Roul,
+			// Token: 0x04000765 RID: 1893
+			Unknown
+		}
+	}
+
+	// Token: 0x020000D8 RID: 216
+	public class GClass89 : GClass65.GClass88
+	{
+		// Token: 0x060006A1 RID: 1697 RVA: 0x00029F8C File Offset: 0x0002818C
+		public override void vmethod_0()
+		{
+			int num = 0;
+			if (!GClass65.smethod_4(3, ref num))
+			{
+				throw new Exception();
+			}
+			int num2 = 0;
+			if (!GClass65.smethod_4(4, ref num2))
+			{
+				throw new Exception();
+			}
+			base.method_0();
+			this.gclass66_0.method_0();
+			int num3 = GClass65.binaryReader_0.ReadInt32();
+			for (int i = 0; i < num3; i++)
+			{
+				GClass65.GClass99 gclass = new GClass65.GClass99();
+				gclass.method_0();
+				this.list_0.Add(gclass);
+			}
+			if (num2 == 1)
+			{
+				this.method_1();
+			}
+			if (num < 2)
+			{
+				throw new NotImplementedException();
+			}
+			this.method_2();
+			this.method_4();
+			if (num > 0)
+			{
+			}
+		}
+
+		// Token: 0x060006A2 RID: 1698 RVA: 0x00006281 File Offset: 0x00004481
+		private void method_1()
+		{
+			throw new NotImplementedException();
+		}
+
+		// Token: 0x060006A3 RID: 1699 RVA: 0x0002A028 File Offset: 0x00028228
+		private void method_2()
+		{
+			if (!GClass65.smethod_5(0))
+			{
+				throw new Exception();
+			}
+			int num = GClass65.binaryReader_0.ReadInt32();
+			if (num <= 7)
+			{
+				for (int i = GClass65.binaryReader_0.ReadInt32(); i > 0; i--)
+				{
+					this.method_3(num);
+				}
+				for (int i = GClass65.binaryReader_0.ReadInt32(); i > 0; i--)
+				{
+					this.method_3(num);
+				}
+				return;
+			}
+			throw new Exception();
+		}
+
+		// Token: 0x060006A4 RID: 1700 RVA: 0x0002A094 File Offset: 0x00028294
+		private void method_3(int int_8)
+		{
+			if (GClass65.binaryReader_0.ReadBoolean())
+			{
+				GClass65.smethod_6();
+			}
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadBytes(8);
+			GClass65.binaryReader_0.ReadInt32();
+			if (int_8 > 0)
+			{
+				if (int_8 >= 4)
+				{
+					GClass65.binaryReader_0.ReadByte();
+				}
+				else
+				{
+					GClass65.binaryReader_0.ReadInt32();
+				}
+			}
+			if (int_8 > 3)
+			{
+				GClass65.binaryReader_0.ReadByte();
+			}
+			if (int_8 > 1)
+			{
+				if (GClass65.binaryReader_0.ReadByte() != 0)
+				{
+					GClass65.smethod_2();
+				}
+				if (GClass65.binaryReader_0.ReadByte() != 0)
+				{
+					this.method_10();
+				}
+				if (int_8 > 4 && GClass65.binaryReader_0.ReadByte() != 0)
+				{
+					this.method_10();
+				}
+			}
+			if (int_8 > 5)
+			{
+				GClass65.binaryReader_0.ReadInt32();
+			}
+			else if (int_8 > 2)
+			{
+				GClass65.binaryReader_0.ReadInt32();
+			}
+			if (int_8 > 6)
+			{
+				GClass65.binaryReader_0.ReadInt32();
+			}
+		}
+
+		// Token: 0x060006A5 RID: 1701 RVA: 0x0002A170 File Offset: 0x00028370
+		private void method_4()
+		{
+			int num = 0;
+			if (!GClass65.smethod_4(4, ref num))
+			{
+				throw new Exception();
+			}
+			this.method_9();
+			this.method_9();
+			int i = GClass65.binaryReader_0.ReadInt32();
+			if (i != 0)
+			{
+				GClass65.binaryReader_0.ReadInt32();
+				while (i > 0)
+				{
+					this.method_8();
+					i--;
+				}
+			}
+			this.method_7();
+			if (num == 0)
+			{
+				GClass65.binaryReader_0.ReadBytes(16);
+				GClass65.binaryReader_0.ReadInt32();
+				GClass65.binaryReader_0.ReadInt32();
+				GClass65.binaryReader_0.ReadByte();
+				GClass65.binaryReader_0.ReadByte();
+				GClass65.binaryReader_0.ReadInt32();
+				GClass65.binaryReader_0.ReadByte();
+			}
+			if (num > 1)
+			{
+				this.method_6();
+			}
+			if (num > 2)
+			{
+				this.method_5();
+			}
+		}
+
+		// Token: 0x060006A6 RID: 1702 RVA: 0x0002A230 File Offset: 0x00028430
+		private void method_5()
+		{
+			if (GClass65.binaryReader_0.ReadInt32() != 0)
+			{
+				goto IL_30;
+			}
+			IL_0C:
+			int num = -1154135214;
+			IL_11:
+			switch ((num ^ -1531329076) % 4)
+			{
+			case 1:
+				IL_30:
+				GClass65.binaryReader_0.ReadInt32();
+				num = -1887078424;
+				goto IL_11;
+			case 2:
+				return;
+			case 3:
+				goto IL_0C;
+			}
+		}
+
+		// Token: 0x060006A7 RID: 1703 RVA: 0x0000A3CB File Offset: 0x000085CB
+		private void method_6()
+		{
+			GClass65.binaryReader_0.ReadInt32();
+		}
+
+		// Token: 0x060006A8 RID: 1704 RVA: 0x0002A280 File Offset: 0x00028480
+		private void method_7()
+		{
+			if (GClass65.binaryReader_0.ReadInt32() == 0)
+			{
+				return;
+			}
+			for (int i = GClass65.binaryReader_0.ReadInt32(); i > 0; i--)
+			{
+			}
+		}
+
+		// Token: 0x060006A9 RID: 1705 RVA: 0x0000A3D8 File Offset: 0x000085D8
+		private void method_8()
+		{
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadByte();
+		}
+
+		// Token: 0x060006AA RID: 1706 RVA: 0x0002A2B0 File Offset: 0x000284B0
+		private void method_9()
+		{
+			int i = GClass65.binaryReader_0.ReadInt32();
+			if (i == 0)
+			{
+				return;
+			}
+			int num = GClass65.binaryReader_0.ReadInt32();
+			if (num > 9)
+			{
+				throw new Exception();
+			}
+			while (i > 0)
+			{
+				new GClass65.GClass89.GClass94().method_0(num);
+				i--;
+			}
+		}
+
+		// Token: 0x060006AB RID: 1707 RVA: 0x0002A2F8 File Offset: 0x000284F8
+		private void method_10()
+		{
+			int count = GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadBytes(count);
+		}
+
+		// Token: 0x04000766 RID: 1894
+		private int int_3;
+
+		// Token: 0x04000767 RID: 1895
+		private int int_4;
+
+		// Token: 0x04000768 RID: 1896
+		private int int_5;
+
+		// Token: 0x04000769 RID: 1897
+		private int int_6;
+
+		// Token: 0x0400076A RID: 1898
+		private int int_7;
+
+		// Token: 0x0400076B RID: 1899
+		public List<GClass65.GClass99> list_0 = new List<GClass65.GClass99>();
+
+		// Token: 0x020000D9 RID: 217
+		private class Class46
+		{
+			// Token: 0x0400076C RID: 1900
+			private int int_0 = 1;
+
+			// Token: 0x0400076D RID: 1901
+			private List<int> list_0 = new List<int>();
+
+			// Token: 0x0400076E RID: 1902
+			private List<int> list_1 = new List<int>();
+
+			// Token: 0x0400076F RID: 1903
+			private List<int> list_2 = new List<int>();
+
+			// Token: 0x04000770 RID: 1904
+			private List<int> list_3 = new List<int>();
+
+			// Token: 0x04000771 RID: 1905
+			private List<int> list_4 = new List<int>();
+
+			// Token: 0x04000772 RID: 1906
+			private List<int> list_5 = new List<int>();
+		}
+
+		// Token: 0x020000DA RID: 218
+		private class Class47
+		{
+			// Token: 0x04000773 RID: 1907
+			private int int_0 = 1;
+
+			// Token: 0x04000774 RID: 1908
+			private List<int> list_0 = new List<int>();
+
+			// Token: 0x04000775 RID: 1909
+			private List<int> list_1 = new List<int>();
+		}
+
+		// Token: 0x020000DB RID: 219
+		public class GClass94
+		{
+			// Token: 0x060006B0 RID: 1712 RVA: 0x0002A378 File Offset: 0x00028578
+			public void method_0(int int_21)
+			{
+				GClass65.smethod_6();
+				this.point_0 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				this.rectangle_0 = new Rectangle(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				this.byte_0 = GClass65.smethod_0();
+				this.byte_1 = ((int_21 > 4) ? GClass65.binaryReader_0.ReadByte() : 1);
+				this.byte_2 = ((int_21 > 6) ? GClass65.binaryReader_0.ReadByte() : 1);
+				this.int_5 = GClass65.binaryReader_0.ReadInt32();
+				if (int_21 > 2)
+				{
+					int i = GClass65.binaryReader_0.ReadInt32();
+					if (i == 0)
+					{
+					}
+					while (i > 0)
+					{
+						GClass65.binaryReader_0.ReadBytes(8);
+						i--;
+					}
+				}
+				if (int_21 != 1)
+				{
+					if (int_21 != 0)
+					{
+						GClass65.smethod_0();
+					}
+					if (int_21 > 3)
+					{
+						GClass65.smethod_2();
+					}
+				}
+				if (int_21 > 5 && GClass65.binaryReader_0.ReadBoolean())
+				{
+					this.method_1();
+					GClass65.binaryReader_0.ReadInt32();
+				}
+				if (int_21 <= 7)
+				{
+					return;
+				}
+				GClass65.binaryReader_0.ReadInt32();
+			}
+
+			// Token: 0x060006B1 RID: 1713 RVA: 0x0000A442 File Offset: 0x00008642
+			private void method_1()
+			{
+				if (!GClass65.smethod_5(0))
+				{
+					throw new Exception();
+				}
+				GClass65.binaryReader_0.ReadInt32();
+			}
+
+			// Token: 0x04000776 RID: 1910
+			public int int_0 = 1;
+
+			// Token: 0x04000777 RID: 1911
+			public int int_1;
+
+			// Token: 0x04000778 RID: 1912
+			public int int_2;
+
+			// Token: 0x04000779 RID: 1913
+			public int int_3;
+
+			// Token: 0x0400077A RID: 1914
+			public Point point_0;
+
+			// Token: 0x0400077B RID: 1915
+			public int int_4;
+
+			// Token: 0x0400077C RID: 1916
+			public int int_5;
+
+			// Token: 0x0400077D RID: 1917
+			public int int_6;
+
+			// Token: 0x0400077E RID: 1918
+			public Rectangle rectangle_0;
+
+			// Token: 0x0400077F RID: 1919
+			public int int_7;
+
+			// Token: 0x04000780 RID: 1920
+			public int int_8;
+
+			// Token: 0x04000781 RID: 1921
+			public int int_9;
+
+			// Token: 0x04000782 RID: 1922
+			public byte byte_0;
+
+			// Token: 0x04000783 RID: 1923
+			public byte byte_1;
+
+			// Token: 0x04000784 RID: 1924
+			public byte byte_2;
+
+			// Token: 0x04000785 RID: 1925
+			public int int_10;
+
+			// Token: 0x04000786 RID: 1926
+			public int int_11;
+
+			// Token: 0x04000787 RID: 1927
+			public int int_12;
+
+			// Token: 0x04000788 RID: 1928
+			public int int_13;
+
+			// Token: 0x04000789 RID: 1929
+			public int int_14;
+
+			// Token: 0x0400078A RID: 1930
+			public int int_15;
+
+			// Token: 0x0400078B RID: 1931
+			public int int_16;
+
+			// Token: 0x0400078C RID: 1932
+			public int int_17;
+
+			// Token: 0x0400078D RID: 1933
+			public int int_18;
+
+			// Token: 0x0400078E RID: 1934
+			public int int_19;
+
+			// Token: 0x0400078F RID: 1935
+			public int int_20;
+		}
+	}
+
+	// Token: 0x020000DC RID: 220
+	public class GClass90 : GClass65.GClass88
+	{
+		// Token: 0x060006B2 RID: 1714 RVA: 0x0002A498 File Offset: 0x00028698
+		public override void vmethod_0()
+		{
+			int num = 0;
+			if (!GClass65.smethod_4(2, ref num))
+			{
+				throw new Exception();
+			}
+			int num2 = 0;
+			if (!GClass65.smethod_4(1, ref num2))
+			{
+				throw new Exception();
+			}
+			this.string_0 = GClass65.smethod_2();
+			this.string_2 = GClass65.smethod_2();
+			if (num2 > 0)
+			{
+				this.string_1 = GClass65.smethod_2();
+			}
+			this.genum7_0 = (GClass65.GClass88.GEnum7)GClass65.smethod_1();
+			this.int_0 = GClass65.smethod_1();
+			this.int_1 = GClass65.smethod_1();
+			this.int_8 = GClass65.smethod_1();
+			this.int_9 = GClass65.binaryReader_0.ReadInt32();
+			int i = GClass65.binaryReader_0.ReadInt32();
+			if (i > 0)
+			{
+				while (i > 0)
+				{
+					if (GClass65.binaryReader_0.ReadBoolean())
+					{
+						GClass65.GClass90.Class48 @class = new GClass65.GClass90.Class48();
+						@class.int_0 = GClass65.binaryReader_0.ReadInt32();
+						@class.int_1 = GClass65.binaryReader_0.ReadInt32();
+						@class.int_2 = GClass65.binaryReader_0.ReadInt32();
+						@class.int_3 = GClass65.binaryReader_0.ReadInt32();
+						@class.int_4 = GClass65.binaryReader_0.ReadInt32();
+						if (num > 0)
+						{
+							@class.int_5 = GClass65.binaryReader_0.ReadInt32();
+						}
+						else
+						{
+							float num3 = GClass65.binaryReader_0.ReadSingle();
+							@class.int_5 = ((num3 < 0f) ? ((int)Math.Abs(num3)) : 0);
+						}
+						if (num <= 1)
+						{
+							@class.int_6 = 0;
+						}
+						else
+						{
+							@class.int_6 = GClass65.binaryReader_0.ReadInt32();
+						}
+						this.list_0.Add(@class);
+					}
+					i--;
+				}
+			}
+			i = GClass65.binaryReader_0.ReadInt32();
+			if (i <= 0)
+			{
+				return;
+			}
+			if (GClass65.binaryReader_0.ReadInt32() == 4)
+			{
+				for (int j = 0; j < 4; j++)
+				{
+					int num4 = GClass65.binaryReader_0.ReadInt32();
+					int num5 = 0;
+					switch (j)
+					{
+					case 0:
+						num5 = 0;
+						break;
+					case 1:
+						num5 = 0;
+						break;
+					case 2:
+						num5 = 0;
+						break;
+					case 3:
+						num5 = 0;
+						break;
+					}
+					if (num4 > num5)
+					{
+						throw new Exception();
+					}
+				}
+				while (i > 0)
+				{
+					byte b = GClass65.binaryReader_0.ReadByte();
+					b -= 8;
+					if (b > 3)
+					{
+						throw new Exception();
+					}
+					switch (b)
+					{
+					case 0:
+						GClass65.GClass90.smethod_2();
+						break;
+					case 1:
+						GClass65.GClass90.smethod_5();
+						break;
+					case 2:
+						GClass65.GClass90.smethod_4();
+						break;
+					case 3:
+						GClass65.GClass90.smethod_3();
+						break;
+					}
+					i--;
+				}
+				return;
+			}
+			throw new Exception();
+		}
+
+		// Token: 0x060006B3 RID: 1715 RVA: 0x0000A45D File Offset: 0x0000865D
+		private static void smethod_2()
+		{
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+		}
+
+		// Token: 0x060006B4 RID: 1716 RVA: 0x0002A6F8 File Offset: 0x000288F8
+		private static void smethod_3()
+		{
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+		}
+
+		// Token: 0x060006B5 RID: 1717 RVA: 0x0002A6F8 File Offset: 0x000288F8
+		private static void smethod_4()
+		{
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+		}
+
+		// Token: 0x060006B6 RID: 1718 RVA: 0x0002A754 File Offset: 0x00028954
+		private static void smethod_5()
+		{
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+			GClass65.binaryReader_0.ReadInt32();
+		}
+
+		// Token: 0x04000790 RID: 1936
+		private int int_3;
+
+		// Token: 0x04000791 RID: 1937
+		private int int_4;
+
+		// Token: 0x04000792 RID: 1938
+		private int int_5;
+
+		// Token: 0x04000793 RID: 1939
+		private int int_6;
+
+		// Token: 0x04000794 RID: 1940
+		private int int_7;
+
+		// Token: 0x04000795 RID: 1941
+		private int int_8;
+
+		// Token: 0x04000796 RID: 1942
+		private int int_9;
+
+		// Token: 0x04000797 RID: 1943
+		private List<GClass65.GClass90.Class48> list_0 = new List<GClass65.GClass90.Class48>();
+
+		// Token: 0x04000798 RID: 1944
+		private List<int> list_1 = new List<int>();
+
+		// Token: 0x04000799 RID: 1945
+		private int int_10;
+
+		// Token: 0x020000DD RID: 221
+		private class Class48
+		{
+			// Token: 0x0400079A RID: 1946
+			public int int_0;
+
+			// Token: 0x0400079B RID: 1947
+			public int int_1;
+
+			// Token: 0x0400079C RID: 1948
+			public int int_2;
+
+			// Token: 0x0400079D RID: 1949
+			public int int_3;
+
+			// Token: 0x0400079E RID: 1950
+			public int int_4;
+
+			// Token: 0x0400079F RID: 1951
+			public int int_5;
+
+			// Token: 0x040007A0 RID: 1952
+			public int int_6 = -1;
+		}
+	}
+
+	// Token: 0x020000DE RID: 222
+	public class GClass91 : GClass65.GClass88
+	{
+		// Token: 0x060006B9 RID: 1721 RVA: 0x0000A4B8 File Offset: 0x000086B8
+		public GClass91()
+		{
+			throw new NotImplementedException();
+		}
+
+		// Token: 0x060006BA RID: 1722 RVA: 0x00006281 File Offset: 0x00004481
+		public override void vmethod_0()
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	// Token: 0x020000DF RID: 223
+	public class GClass92 : GClass65.GClass88
+	{
+		// Token: 0x060006BB RID: 1723 RVA: 0x0000A4B8 File Offset: 0x000086B8
+		public GClass92()
+		{
+			throw new NotImplementedException();
+		}
+
+		// Token: 0x060006BC RID: 1724 RVA: 0x00006281 File Offset: 0x00004481
+		public override void vmethod_0()
+		{
+			throw new NotImplementedException();
+		}
+	}
+
+	// Token: 0x020000E0 RID: 224
+	public class GClass93 : GClass65.GClass88
+	{
+		// Token: 0x060006BD RID: 1725 RVA: 0x0002A7A4 File Offset: 0x000289A4
+		public override void vmethod_0()
+		{
+			int num = 0;
+			if (!GClass65.smethod_4(1, ref num))
+			{
+				throw new Exception();
+			}
+			int num2 = 0;
+			if (!GClass65.smethod_4(0, ref num2))
+			{
+				throw new Exception();
+			}
+			base.method_0();
+			this.gclass66_0.method_0();
+			this.int_4 = GClass65.smethod_1();
+			if (this.int_4 != 0)
+			{
+				this.int_5 = GClass65.smethod_1();
+				if (GClass65.GClass93.GClass95.int_7 > this.int_5)
+				{
+					throw new Exception();
+				}
+				this.list_0 = new List<GClass65.GClass93.GClass95>();
+			}
+			for (int i = 0; i < this.int_4; i++)
+			{
+				GClass65.GClass93.GClass95 gclass = new GClass65.GClass93.GClass95();
+				gclass.method_0();
+				this.list_0.Add(gclass);
+			}
+			this.int_6 = GClass65.binaryReader_0.ReadInt32();
+			int num3;
+			if (this.int_6 == 0)
+			{
+				num3 = this.int_4;
+			}
+			else
+			{
+				num3 = GClass65.binaryReader_0.ReadInt32();
+				if (num3 > GClass65.GClass93.GClass96.int_2)
+				{
+					throw new Exception();
+				}
+				this.list_1 = new List<GClass65.GClass93.GClass96>();
+			}
+			for (int j = 0; j < this.int_6; j++)
+			{
+				GClass65.GClass93.GClass96 gclass2 = new GClass65.GClass93.GClass96();
+				gclass2.method_0(num3);
+				this.list_1.Add(gclass2);
+			}
+			if (num > 0)
+			{
+				this.int_6 = GClass65.binaryReader_0.ReadInt32();
+				if (this.int_6 != 0 && GClass65.binaryReader_0.ReadInt32() > GClass65.GClass93.GClass98.int_0)
+				{
+					throw new Exception();
+				}
+			}
+			if (this.int_6 > 0)
+			{
+				for (int k = 0; k < this.int_6; k++)
+				{
+					GClass65.GClass93.GClass98 gclass3 = new GClass65.GClass93.GClass98();
+					gclass3.method_0();
+					this.list_2.Add(gclass3);
+				}
+			}
+		}
+
+		// Token: 0x040007A1 RID: 1953
+		public int int_3;
+
+		// Token: 0x040007A2 RID: 1954
+		public int int_4;
+
+		// Token: 0x040007A3 RID: 1955
+		public int int_5;
+
+		// Token: 0x040007A4 RID: 1956
+		public int int_6;
+
+		// Token: 0x040007A5 RID: 1957
+		public int int_7;
+
+		// Token: 0x040007A6 RID: 1958
+		public int int_8;
+
+		// Token: 0x040007A7 RID: 1959
+		public List<GClass65.GClass93.GClass95> list_0;
+
+		// Token: 0x040007A8 RID: 1960
+		public List<GClass65.GClass93.GClass96> list_1;
+
+		// Token: 0x040007A9 RID: 1961
+		public List<GClass65.GClass93.GClass98> list_2;
+
+		// Token: 0x020000E1 RID: 225
+		public class GClass95
+		{
+			// Token: 0x060006BF RID: 1727 RVA: 0x0002A934 File Offset: 0x00028B34
+			public void method_0()
+			{
+				this.point_0 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				this.int_1 = GClass65.binaryReader_0.ReadInt32();
+				this.int_2 = GClass65.binaryReader_0.ReadInt32();
+				this.int_3 = GClass65.binaryReader_0.ReadInt32();
+				this.point_1 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				this.point_2 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				this.int_4 = GClass65.binaryReader_0.ReadInt32();
+				this.int_5 = GClass65.binaryReader_0.ReadInt32();
+				this.int_6 = GClass65.binaryReader_0.ReadInt32();
+				this.string_0 = GClass65.smethod_2();
+			}
+
+			// Token: 0x040007AA RID: 1962
+			public int int_0;
+
+			// Token: 0x040007AB RID: 1963
+			public Point point_0;
+
+			// Token: 0x040007AC RID: 1964
+			public int int_1;
+
+			// Token: 0x040007AD RID: 1965
+			public int int_2;
+
+			// Token: 0x040007AE RID: 1966
+			public int int_3;
+
+			// Token: 0x040007AF RID: 1967
+			public Point point_1;
+
+			// Token: 0x040007B0 RID: 1968
+			public Point point_2;
+
+			// Token: 0x040007B1 RID: 1969
+			public int int_4;
+
+			// Token: 0x040007B2 RID: 1970
+			public int int_5;
+
+			// Token: 0x040007B3 RID: 1971
+			public int int_6;
+
+			// Token: 0x040007B4 RID: 1972
+			public string string_0;
+
+			// Token: 0x040007B5 RID: 1973
+			public static int int_7;
+		}
+
+		// Token: 0x020000E2 RID: 226
+		public class GClass96
+		{
+			// Token: 0x060006C1 RID: 1729 RVA: 0x0002AA0C File Offset: 0x00028C0C
+			public void method_0(int int_3)
+			{
+				this.string_0 = GClass65.smethod_2();
+				this.int_0 = GClass65.binaryReader_0.ReadInt32();
+				this.rectangle_0 = Rectangle.FromLTRB(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				int num = GClass65.binaryReader_0.ReadInt32();
+				if (num != 0)
+				{
+					this.int_1 = GClass65.binaryReader_0.ReadInt32();
+					if (this.int_1 > GClass65.GClass93.GClass97.int_8)
+					{
+						throw new Exception();
+					}
+					this.list_0 = new List<GClass65.GClass93.GClass97>();
+				}
+				for (int i = 0; i < num; i++)
+				{
+					GClass65.GClass93.GClass97 gclass = new GClass65.GClass93.GClass97();
+					gclass.method_0();
+					this.list_0.Add(gclass);
+				}
+				if (int_3 > 0 && GClass65.binaryReader_0.ReadInt32() != 0)
+				{
+					int num2 = GClass65.binaryReader_0.ReadInt32();
+					if (num2 > GClass65.GClass86.Int32_0)
+					{
+						throw new Exception();
+					}
+					this.gclass86_0 = new GClass65.GClass86();
+					this.gclass86_0.method_0(num2);
+				}
+				if (int_3 > 1 && GClass65.binaryReader_0.ReadBoolean())
+				{
+					this.list_1 = new List<string>();
+					this.list_1.Add(GClass65.smethod_2());
+					this.list_1.Add(GClass65.smethod_2());
+					this.list_1.Add(GClass65.smethod_2());
+					this.list_1.Add(GClass65.smethod_2());
+					this.list_1.Add(GClass65.smethod_2());
+				}
+			}
+
+			// Token: 0x040007B6 RID: 1974
+			public List<GClass65.GClass93.GClass97> list_0;
+
+			// Token: 0x040007B7 RID: 1975
+			public string string_0;
+
+			// Token: 0x040007B8 RID: 1976
+			public int int_0;
+
+			// Token: 0x040007B9 RID: 1977
+			public Rectangle rectangle_0;
+
+			// Token: 0x040007BA RID: 1978
+			public int int_1;
+
+			// Token: 0x040007BB RID: 1979
+			public GClass65.GClass86 gclass86_0;
+
+			// Token: 0x040007BC RID: 1980
+			public List<string> list_1;
+
+			// Token: 0x040007BD RID: 1981
+			public static int int_2 = 2;
+		}
+
+		// Token: 0x020000E3 RID: 227
+		public class GClass97
+		{
+			// Token: 0x060006C4 RID: 1732 RVA: 0x0002AB74 File Offset: 0x00028D74
+			public void method_0()
+			{
+				this.point_0 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				this.int_0 = GClass65.smethod_1();
+				this.int_1 = GClass65.binaryReader_0.ReadInt32();
+				this.int_2 = GClass65.binaryReader_0.ReadInt32();
+				this.point_1 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				this.point_2 = new Point(GClass65.binaryReader_0.ReadInt32(), GClass65.binaryReader_0.ReadInt32());
+				this.int_3 = GClass65.binaryReader_0.ReadInt32();
+				this.int_4 = GClass65.binaryReader_0.ReadInt32();
+				this.int_5 = GClass65.binaryReader_0.ReadInt32();
+				this.string_0 = GClass65.smethod_2();
+				this.int_6 = GClass65.binaryReader_0.ReadInt32();
+				this.int_7 = GClass65.binaryReader_0.ReadInt32();
+			}
+
+			// Token: 0x040007BE RID: 1982
+			public Point point_0;
+
+			// Token: 0x040007BF RID: 1983
+			public int int_0;
+
+			// Token: 0x040007C0 RID: 1984
+			public int int_1;
+
+			// Token: 0x040007C1 RID: 1985
+			public int int_2;
+
+			// Token: 0x040007C2 RID: 1986
+			public Point point_1;
+
+			// Token: 0x040007C3 RID: 1987
+			public Point point_2;
+
+			// Token: 0x040007C4 RID: 1988
+			public int int_3;
+
+			// Token: 0x040007C5 RID: 1989
+			public int int_4;
+
+			// Token: 0x040007C6 RID: 1990
+			public int int_5;
+
+			// Token: 0x040007C7 RID: 1991
+			public string string_0;
+
+			// Token: 0x040007C8 RID: 1992
+			public int int_6;
+
+			// Token: 0x040007C9 RID: 1993
+			public int int_7;
+
+			// Token: 0x040007CA RID: 1994
+			public static int int_8;
+		}
+
+		// Token: 0x020000E4 RID: 228
+		public class GClass98
+		{
+			// Token: 0x060006C6 RID: 1734 RVA: 0x00006281 File Offset: 0x00004481
+			public void method_0()
+			{
+				throw new NotImplementedException();
+			}
+
+			// Token: 0x040007CB RID: 1995
+			public static int int_0;
+		}
+	}
+
+	// Token: 0x020000E5 RID: 229
+	public class GClass99
+	{
+		// Token: 0x060006C9 RID: 1737 RVA: 0x0002ACB8 File Offset: 0x00028EB8
+		public void method_0()
+		{
+			if (!GClass65.smethod_5(0))
+			{
+				throw new Exception();
+			}
+			this.int_0 = GClass65.binaryReader_0.ReadInt32();
+			for (int i = 0; i < 5; i++)
+			{
+				int j = GClass65.binaryReader_0.ReadInt32();
+				if (j > 0)
+				{
+					int num = GClass65.binaryReader_0.ReadInt32();
+					switch (i)
+					{
+					case 0:
+						if (num > GClass65.GClass82.Int32_0)
+						{
+							throw new Exception();
+						}
+						while (j > 0)
+						{
+							GClass65.GClass82 gclass = new GClass65.GClass82();
+							gclass.method_0(num);
+							this.list_0.Add(gclass);
+							j--;
+						}
+						break;
+					case 1:
+						if (num > GClass65.GClass84.Int32_0)
+						{
+							throw new Exception();
+						}
+						while (j > 0)
+						{
+							GClass65.GClass84 gclass2 = new GClass65.GClass84();
+							gclass2.method_0(num);
+							this.list_1.Add(gclass2);
+							j--;
+						}
+						break;
+					case 2:
+						if (num > GClass65.GClass85.Int32_0)
+						{
+							throw new Exception();
+						}
+						while (j > 0)
+						{
+							GClass65.GClass85 gclass3 = new GClass65.GClass85();
+							gclass3.method_0(num);
+							this.list_2.Add(gclass3);
+							j--;
+						}
+						break;
+					case 3:
+						if (num > GClass65.GClass86.Int32_0)
+						{
+							throw new Exception();
+						}
+						while (j > 0)
+						{
+							GClass65.GClass86 gclass4 = new GClass65.GClass86();
+							gclass4.method_0(num);
+							this.list_3.Add(gclass4);
+							j--;
+						}
+						break;
+					case 4:
+						if (num > GClass65.GClass87.Int32_0)
+						{
+							throw new Exception();
+						}
+						while (j > 0)
+						{
+							GClass65.GClass87 gclass5 = new GClass65.GClass87();
+							gclass5.method_0(num);
+							this.list_4.Add(gclass5);
+							j--;
+						}
+						break;
+					}
+				}
+			}
+		}
+
+		// Token: 0x040007CC RID: 1996
+		private int int_0 = 1;
+
+		// Token: 0x040007CD RID: 1997
+		public List<GClass65.GClass82> list_0 = new List<GClass65.GClass82>();
+
+		// Token: 0x040007CE RID: 1998
+		public List<GClass65.GClass84> list_1 = new List<GClass65.GClass84>();
+
+		// Token: 0x040007CF RID: 1999
+		public List<GClass65.GClass85> list_2 = new List<GClass65.GClass85>();
+
+		// Token: 0x040007D0 RID: 2000
+		public List<GClass65.GClass86> list_3 = new List<GClass65.GClass86>();
+
+		// Token: 0x040007D1 RID: 2001
+		public List<GClass65.GClass87> list_4 = new List<GClass65.GClass87>();
+
+		// Token: 0x040007D2 RID: 2002
+		private int int_1;
+	}
+
+	// Token: 0x020000E6 RID: 230
+	private class Class49
+	{
+		// Token: 0x170001BD RID: 445
+		// (get) Token: 0x060006CA RID: 1738 RVA: 0x0000A4D5 File Offset: 0x000086D5
+		// (set) Token: 0x060006CB RID: 1739 RVA: 0x0000A4DD File Offset: 0x000086DD
+		public byte Byte_0 { get; internal set; }
+
+		// Token: 0x170001BE RID: 446
+		// (get) Token: 0x060006CC RID: 1740 RVA: 0x0000A4E6 File Offset: 0x000086E6
+		// (set) Token: 0x060006CD RID: 1741 RVA: 0x0000A4EE File Offset: 0x000086EE
+		public byte Byte_1 { get; internal set; }
+
+		// Token: 0x170001BF RID: 447
+		// (get) Token: 0x060006CE RID: 1742 RVA: 0x0000A4F7 File Offset: 0x000086F7
+		// (set) Token: 0x060006CF RID: 1743 RVA: 0x0000A4FF File Offset: 0x000086FF
+		public byte Byte_2 { get; internal set; }
+
+		// Token: 0x040007D3 RID: 2003
+		public int int_0;
+
+		// Token: 0x040007D4 RID: 2004
+		public int int_1;
+
+		// Token: 0x040007D5 RID: 2005
+		public int int_2;
+
+		// Token: 0x040007D6 RID: 2006
+		public int int_3;
+
+		// Token: 0x040007D7 RID: 2007
+		public int int_4;
+
+		// Token: 0x040007D8 RID: 2008
+		public int int_5;
+
+		// Token: 0x040007D9 RID: 2009
+		public int int_6;
+
+		// Token: 0x040007DA RID: 2010
+		public int int_7;
+
+		// Token: 0x040007DB RID: 2011
+		public int int_8;
+
+		// Token: 0x040007DC RID: 2012
+		public int int_9;
+
+		// Token: 0x040007DD RID: 2013
+		public int int_10;
+
+		// Token: 0x040007DE RID: 2014
+		public int int_11;
+
+		// Token: 0x040007DF RID: 2015
+		public int int_12;
+
+		// Token: 0x040007E0 RID: 2016
+		public int int_13;
+
+		// Token: 0x040007E1 RID: 2017
+		public int int_14;
+
+		// Token: 0x040007E2 RID: 2018
+		public int int_15;
+
+		// Token: 0x040007E3 RID: 2019
+		public int int_16;
+
+		// Token: 0x040007E4 RID: 2020
+		public int int_17;
+
+		// Token: 0x040007E5 RID: 2021
+		public int int_18;
+
+		// Token: 0x040007E6 RID: 2022
+		public int int_19;
+
+		// Token: 0x040007E7 RID: 2023
+		public int int_20;
+
+		// Token: 0x040007E8 RID: 2024
+		public int int_21;
+
+		// Token: 0x040007E9 RID: 2025
+		public int int_22;
+
+		// Token: 0x040007EA RID: 2026
+		public Rectangle rectangle_0;
+
+		// Token: 0x040007EB RID: 2027
+		public int int_23;
+
+		// Token: 0x040007EC RID: 2028
+		public int int_24;
+
+		// Token: 0x040007ED RID: 2029
+		public int int_25;
+
+		// Token: 0x040007EE RID: 2030
+		public int int_26;
+
+		// Token: 0x040007EF RID: 2031
+		public int int_27;
+
+		// Token: 0x040007F0 RID: 2032
+		public int int_28;
+
+		// Token: 0x040007F1 RID: 2033
+		public int int_29;
+
+		// Token: 0x040007F2 RID: 2034
+		public int int_30;
+
+		// Token: 0x040007F3 RID: 2035
+		public int int_31;
+
+		// Token: 0x040007F4 RID: 2036
+		public int int_32;
+
+		// Token: 0x040007F5 RID: 2037
+		public string string_0;
+
+		// Token: 0x040007F6 RID: 2038
+		public List<string> list_0 = new List<string>();
+
+		// Token: 0x040007F7 RID: 2039
+		public List<string> list_1 = new List<string>();
+
+		// Token: 0x040007F8 RID: 2040
+		[CompilerGenerated]
+		private byte byte_0;
+
+		// Token: 0x040007F9 RID: 2041
+		[CompilerGenerated]
+		private byte byte_1;
+
+		// Token: 0x040007FA RID: 2042
+		[CompilerGenerated]
+		private byte byte_2;
+	}
+}
